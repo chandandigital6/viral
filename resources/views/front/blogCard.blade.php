@@ -23,172 +23,41 @@
         </div>
     </section>
     <!-- End Page Title Area -->
-
-    <div class="main-contaier spacer">
+    <section class="blog-area bg-f9f9f9 pt-100 pb-70">
         <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Our Blog</span>
+                <h2>Our Latest Media</h2>
+                <p>Our campaigns get your business in front of the right people at the right time to increase organic traffic and boost engagement.</p>
+            </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="lauren-blogs blog-grid grid-3col">
-                        <div class="row">
-
-                            <article class="item-blog col-md-4 col-sm-6 post-125 post type-post status-publish format-image has-post-thumbnail hentry category-fashion tag-fashion tag-image post_format-post-format-image">
-                                <div class="post-format post-standard hoverImg">
+                @foreach($blogs as $blog)
 
 
-                                    <a href="#" target="_blank">
-                                        <img src="{{asset('asset/img/blog/Instagram Analytics Tools.jpg')}}"  class="img-responsive" height="100" alt="Featured Image"></a>
-
-
-                                    <div class="post-info setTitle BlogTitle">
-                                        <h3 class="post-title">
-                                            <a href="blog.html" target="_blank">7 Instagram Analytics Tools You Need to Know About</a>
-
-                                        </h3>
-                                        <p>
-                                            With the rapid evolution of technology, the demand for social media gets increased.
-                                        </p>
-                                        <div class="imgauthr">
-
-                                            <a href="#" target="_blank"><img src="{{asset('asset/img/user2.jpg')}}"></a>
-
-                                            <h5>Viral Business </h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2020-12-31 13:09:24</span>
-                                        </div>
-
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog-post">
+                            <div class="image">
+                                <a href="blog.html" class="d-block"> <img src="{{asset('storage/'.$blog->image)}}" alt="image"> </a>
+                            </div>
+                            <div class="content">
+                                <h3><a href="blog.html">{{$blog->title}}</a></h3>
+                                <p>{{$blog->short_description}}</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{asset('storage/'.$blog->user_image)}}" alt="image">
+                                    <div class="info">
+                                        <h5>{{$blog->author_name}}</h5>
+                                        <span>{{$blog->post_date}}</span>
                                     </div>
-
                                 </div>
-
-                            </article>
-                            <article class="item-blog col-md-4 col-sm-6 post-125 post type-post status-publish format-image has-post-thumbnail hentry category-fashion tag-fashion tag-image post_format-post-format-image">
-                                <div class="post-format post-standard hoverImg">
-
-
-                                    <a href="#" target="_blank">
-                                        <img src="{{asset('asset/img/blog/Email Marketing Tools.jpg')}}"  class="img-responsive" height="100" alt="Featured Image"></a>
-
-
-                                    <div class="post-info setTitle BlogTitle">
-                                        <h3 class="post-title">
-                                            <a href="blog.html" target="_blank">7 Instagram Analytics Tools You Need to Know About</a>
-
-                                        </h3>
-                                        <p>
-                                            With the rapid evolution of technology, the demand for social media gets increased.
-                                        </p>
-                                        <div class="imgauthr">
-
-                                            <a href="#" target="_blank"><img src="{{asset('asset/img/user3.jpg')}}"></a>
-
-                                            <h5>Viral Business </h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2020-12-31 13:09:24</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-                            <article class="item-blog col-md-4 col-sm-6 post-125 post type-post status-publish format-image has-post-thumbnail hentry category-fashion tag-fashion tag-image post_format-post-format-image">
-                                <div class="post-format post-standard hoverImg">
-
-
-                                    <a href="#" target="_blank">
-                                        <img src="{{asset('asset/img/blog/Keywords for Your Website.jpg')}}"  class="img-responsive" height="100" alt="Featured Image"></a>
-
-
-                                    <div class="post-info setTitle BlogTitle">
-                                        <h3 class="post-title">
-                                            <a href="blog.html" target="_blank">7 Instagram Analytics Tools You Need to Know About</a>
-
-                                        </h3>
-                                        <p>
-                                            With the rapid evolution of technology, the demand for social media gets increased.
-                                        </p>
-                                        <div class="imgauthr">
-
-                                            <a href="#" target="_blank"><img src="{{asset('asset/img/user2.jpg')}}"></a>
-
-                                            <h5>Viral Business </h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2020-12-31 13:09:24</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-                        <br>
-                        <div class="row">
-
-                            <article class="item-blog col-md-4 col-sm-6 post-125 post type-post status-publish format-image has-post-thumbnail hentry category-fashion tag-fashion tag-image post_format-post-format-image">
-                                <div class="post-format post-standard hoverImg">
-
-
-                                    <a href="#" target="_blank">
-                                        <img src="assets/img/blog/Instagram Analytics Tools.jpg"  class="img-responsive" height="100" alt="Featured Image"></a>
-
-
-                                    <div class="post-info setTitle BlogTitle">
-                                        <h3 class="post-title">
-                                            <a href="blog.html" target="_blank">7 Instagram Analytics Tools You Need to Know About</a>
-
-                                        </h3>
-                                        <p>
-                                            With the rapid evolution of technology, the demand for social media gets increased.
-                                        </p>
-                                        <div class="imgauthr">
-
-                                            <a href="#" target="_blank"><img src="assets/img/user2.jpg"></a>
-
-                                            <h5>Viral Business </h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2020-12-31 13:09:24</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-                            <article class="item-blog col-md-4 col-sm-6 post-125 post type-post status-publish format-image has-post-thumbnail hentry category-fashion tag-fashion tag-image post_format-post-format-image">
-                                <div class="post-format post-standard hoverImg">
-
-
-                                    <a href="#" target="_blank">
-                                        <img src="assets/img/blog/Email Marketing Tools.jpg"  class="img-responsive" height="100" alt="Featured Image"></a>
-
-
-                                    <div class="post-info setTitle BlogTitle">
-                                        <h3 class="post-title">
-                                            <a href="blog.html" target="_blank">7 Instagram Analytics Tools You Need to Know About</a>
-
-                                        </h3>
-                                        <p>
-                                            With the rapid evolution of technology, the demand for social media gets increased.
-                                        </p>
-                                        <div class="imgauthr">
-
-                                            <a href="#" target="_blank"><img src="{{asset('asset/img/user1.jpg')}}"></a>
-
-                                            <h5>Viral Business </h5>
-                                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2020-12-31 13:09:24</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-
-
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
-    </div>
+    </section>
 
 
 

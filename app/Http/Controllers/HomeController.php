@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\choze;
 use App\Models\Counter;
 use App\Models\Faq;
+use App\Models\Job;
+use App\Models\join;
 use App\Models\Menu;
 use App\Models\Plan;
 use App\Models\Service;
@@ -81,10 +83,13 @@ class HomeController extends Controller
         return view('front.menu',compact('categories'));
     }
     public function joinUs(){
-        return view('front.joinUs');
+        $joins=join::all();
+        $benefits=Plan::all();
+        return view('front.joinUs',compact('joins','benefits'));
     }
 
     public function jobs(){
-        return view('front.jobs');
+        $jobs=Job::all();
+        return view('front.jobs',compact('jobs'));
     }
 }

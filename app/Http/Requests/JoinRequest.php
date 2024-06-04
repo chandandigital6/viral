@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogRequest extends FormRequest
+class JoinRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,10 @@ class BlogRequest extends FormRequest
         return [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required|string|max:255',
-            'short_description' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'categories' => 'nullable|string|max:255',
-            'author_name' => 'nullable|string|max:255',
-            'user_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'post_date' => 'nullable',
+            'msg' => 'nullable|string',
+            'join_title' => 'required|string|max:255',
+            'team_msg' => 'nullable|string',
+            'join_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

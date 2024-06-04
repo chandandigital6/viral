@@ -45,6 +45,20 @@
                 <label for="author_name">Author Name</label>
                 <input type="text" class="form-control" id="author_name" name="author_name" value="{{ $blog->author_name }}">
             </div>
+
+            <div class="form-group">
+                <label for="image">User Image</label>
+                <input type="file" class="form-control" id="user_image" name="user_image" value="{{ old('user_image') }}">
+                @if($blog)
+                    <img src="{{asset('storage/'.$blog->user_image)}}" alt="" width="200px">
+                @else
+                    no images
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="post_date">Post Date</label>
+                <input type="datetime-local" class="form-control datetimepicker" id="post_date " name="post_date" value="{{ $blog->post_date }}">
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -84,15 +84,6 @@
                         </p>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="{{route('plan.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-anchor"></i>
-                        <p>
-                            Services Plans
-                        </p>
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-fax"></i>
@@ -109,7 +100,31 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('joins.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-group"></i>
+                        <p>
+                            Join Us
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('plan.index')}}" class="nav-link">
+                        <i class="nav-icon 	fa fa-anchor"></i>
+                        <p>
+                          JoinUS Benefits
+                        </p>
+                    </a>
+                </li>
 
+                <li class="nav-item">
+                    <a href="{{route('jobs.index')}}" class="nav-link">
+                        <i class="nav-icon 	fa fa-anchor"></i>
+                        <p>
+                          Jobs
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                      <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>

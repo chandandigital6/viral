@@ -23,11 +23,11 @@ class PlanRequest extends FormRequest
     {
         return [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'price' => 'required|string|max:255',
+//            'price' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'fe_1' => 'nullable|string|max:255',
-            'fe_2' => 'nullable|string|max:255',
-            'fe_3' => 'nullable|string|max:255',
+//            'fe_1' => 'nullable|string|max:255',
+//            'fe_2' => 'nullable|string|max:255',
+//            'fe_3' => 'nullable|string|max:255',
         ];
     }
 }
