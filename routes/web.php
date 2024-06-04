@@ -11,6 +11,8 @@ use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JoinTeamController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PlanCOntroller;
 use App\Http\Controllers\ServiceController;
@@ -227,6 +229,28 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('faq/delete/{faq}',[FaqController::class,'delete'])->name('faq.delete');
     Route::get('faq/duplicate/{faq}',[FaqController::class,'duplicate'])->name('faq.duplicate');
 
+    // join teams
+
+
+    Route::get('joins/index',[JoinTeamController::class,'index'])->name('joins.index');
+    Route::get('joins/create',[JoinTeamController::class,'create'])->name('joins.create');
+    Route::post('joins/store',[JoinTeamController::class,'store'])->name('joins.store');
+    Route::get('joins/edit/{joins}',[JoinTeamController::class,'edit'])->name('joins.edit');
+    Route::post('joins/update/{joins}',[JoinTeamController::class,'update'])->name('joins.update');
+    Route::get('joins/delete/{joins}',[JoinTeamController::class,'delete'])->name('joins.delete');
+    Route::get('joins/duplicate/{joins}',[JoinTeamController::class,'duplicate'])->name('joins.duplicate');
+
+
+    // jobs
+
+
+    Route::get('jobs/index',[JobsController::class,'index'])->name('jobs.index');
+    Route::get('jobs/create',[JobsController::class,'create'])->name('jobs.create');
+    Route::post('jobs/store',[JobsController::class,'store'])->name('jobs.store');
+    Route::get('jobs/edit/{jobs}',[JobsController::class,'edit'])->name('jobs.edit');
+    Route::post('jobs/update/{jobs}',[JobsController::class,'update'])->name('jobs.update');
+    Route::get('jobs/delete/{jobs}',[JobsController::class,'delete'])->name('jobs.delete');
+    Route::get('jobs/duplicate/{jobs}',[JobsController::class,'duplicate'])->name('jobs.duplicate');
 
     Route::prefix('seo')->name('seo.')->group(function(){
        Route::get('/', [SEOController::class, 'index'])->name('index');

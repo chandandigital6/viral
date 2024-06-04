@@ -42,24 +42,28 @@
             <h2>Apply Now & Shape your career with new skills &training sessions.</h2>
             <div class="container">
                 <div class="alldata-Job">
+                    @foreach($jobs as $job)
+
+
                     <div class="row">
                         <div class="col-1">
                             <div class="jobData">
-                                <img src="{{asset('asset/img/writer.jpg')}}">
+                                <img src="{{asset('storage/'.$job->image)}}">
                             </div>
                         </div>
                         <div class="col-11">
                             <div class="contentJob faq-list">
                                 <details open>
                                     <summary title="Academic Writer">
-                                        <h3>Academic writer</h3></summary>
-                                    <p class="faq-content"><b>Qualification:</b>BE, B. Tech (CSE & ECE), MBA (finance), BCA, MCA, M. Tech, MBA (marketing), BSc-IT, MSc-IT.
-                                        <br> <b>Skills:</b>Technical writing, creative content, research skills, knowledge of plagiarism tools.
-                                        <br><span><i class="fa fa-map-marker" aria-hidden="true">Ludhiana</i></span> <span><i class="fa fa-envelope" aria-hidden="true"></i></i> info@viralbusinessgroup.com</span></p>
+                                        <h3>{{$job->title}}</h3></summary>
+                                    <p class="faq-content"> {!! $job->qualification !!}
+                                        <br> {!! $job->skill !!}
+                                        <br><span><i class="fa fa-map-marker" aria-hidden="true">{{$job->location}}</i></span> <span><i class="fa fa-envelope" aria-hidden="true"></i></i> {{$job->info}}</span></p>
                                 </details>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

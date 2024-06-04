@@ -26,8 +26,8 @@
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h1>Benefits Plans</h1>
-                            <a href="{{ route('plan.create') }}" class="btn btn-light">Create Benefits</a>
+                            <h1>Jobs</h1>
+                            <a href="{{ route('jobs.create') }}" class="btn btn-light">Create Jobs</a>
                         </div>
                     </div>
 
@@ -45,25 +45,31 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Id</th>
                                     <th>Title</th>
-                                    <th>Massage</th>
+                                    <th>Qualification</th>
+                                    <th>Skill</th>
+                                    <th>lacation</th>
+                                    <th>others</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @forelse ($planData as $plan)
+                                @forelse ($jobsData as $jobs)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $plan->title }}</td>
-                                        <td>{{$plan->msg}}</td>
-                                        <td><img src="{{ asset('storage/'.$plan->image) }}" alt="{{ $plan->title }}" style="max-width: 100px;"></td>
+                                        <td>{{ $jobs->title }}</td>
+                                        <td>{!! $jobs->qualification !!}</td>
+                                        <td>{!! $jobs->skill !!}</td>
+                                        <td>{{$jobs->location}}</td>
+                                        <td>{{$jobs->info}}</td>
+                                        <td><img src="{{ asset('storage/'.$jobs->image) }}" alt="{{ $jobs->title }}" style="max-width: 100px;"></td>
                                         <td>
-                                            <a href="{{ route('plan.edit', $plan->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('plan.delete', $plan->id) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('jobs.edit', $jobs->id) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('jobs.delete', $jobs->id) }}" class="btn btn-danger">Delete</a>
                                             <!-- Add delete button if needed -->
-                                            <a href="{{ route('plan.duplicate', $plan->id) }}" class="btn btn-warning">Duplicate</a>
+                                            <a href="{{ route('jobs.duplicate', $jobs->id) }}" class="btn btn-warning">Duplicate</a>
 
                                         </td>
                                     </tr>

@@ -449,60 +449,36 @@
                 <p>Our campaigns get your business in front of the right people at the right time to increase organic traffic and boost engagement.</p>
             </div>
             <div class="row">
+                @foreach($blogs as $blog)
+
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post">
                         <div class="image">
-                            <a href="blog.html" class="d-block"> <img src="{{asset('asset/img/blog/Email Marketing Tools.jpg')}}" alt="image"> </a>
+                            <a href="blog.html" class="d-block"> <img src="{{asset('storage/'.$blog->image)}}" alt="image"> </a>
                         </div>
                         <div class="content">
-                            <h3><a href="blog.html">How to Build Award Winning Digital Marketing Strategies</a></h3>
+                            <h3><a href="blog.html">{{$blog->title}}</a></h3>
+                            <p>{{$blog->short_description}}</p>
                             <div class="d-flex align-items-center">
-                                <img src="{{asset('asset/img/user2.jpg')}}" alt="image">
+                                <img src="{{asset('storage/'.$blog->user_image)}}" alt="image">
                                 <div class="info">
-                                    <h5>Sarah Taylor</h5>
-                                    <span>Jun 20, 2020</span>
+                                    <h5>{{$blog->author_name}}</h5>
+                                    <span>{{$blog->post_date}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog-post">
-                        <div class="image">
-                            <a href="blog.html" class="d-block"> <img src="{{asset('asset/img/blog/Instagram Analytics Tools.jpg')}}" alt="image"> </a>
-                        </div>
-                        <div class="content">
-                            <h3><a href="blog.html">7 Instagram Analytics Tools You Need to Know About</a></h3>
-                            <div class="d-flex align-items-center">
-                                <img src="{{asset('asset/img/user2.jpg')}}" alt="image">
-                                <div class="info">
-                                    <h5>Sarah Taylor</h5>
-                                    <span>Jun 20, 2020</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                    <div class="single-blog-post">
-                        <div class="image">
-                            <a href="blog.html" class="d-block"> <img src="{{asset('asset/img/blog/Keywords for Your Website.jpg')}}" alt="image"> </a>
-                        </div>
-                        <div class="content">
-                            <h3><a href="blog.html">5 Proven Ways How to Choose Keywords for Your Website</a></h3>
-                            <div class="d-flex align-items-center">
-                                <img src="{{asset('asset/img/user3.jpg')}}" alt="image">
-                                <div class="info">
-                                    <h5>Steven Gibson</h5>
-                                    <span>Jun 19, 2020</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
+
+
+
     <section class="tabbed-set">
         <div class="container">
             <div class="row">

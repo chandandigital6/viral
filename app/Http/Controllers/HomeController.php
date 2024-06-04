@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\choze;
 use App\Models\Counter;
 use App\Models\Faq;
+use App\Models\Job;
+use App\Models\join;
 use App\Models\Menu;
 use App\Models\Plan;
 use App\Models\SEO;
@@ -89,6 +91,7 @@ class HomeController extends Controller
         return view('front.menu',compact('categories', 'seos'));
     }
     public function joinUs(){
+<<<<<<< HEAD
         $seos = SEO::where('page', 'join-us')->get();
         return view('front.joinUs', compact('seos'));
     }
@@ -96,5 +99,15 @@ class HomeController extends Controller
     public function jobs(){
         $seos = SEO::where('page', 'jobs')->get();
         return view('front.jobs', compact('seos'));
+=======
+        $joins=join::all();
+        $benefits=Plan::all();
+        return view('front.joinUs',compact('joins','benefits'));
+    }
+
+    public function jobs(){
+        $jobs=Job::all();
+        return view('front.jobs',compact('jobs'));
+>>>>>>> 787bca9e6d6aaca85083d47f58df130f0f160b8b
     }
 }

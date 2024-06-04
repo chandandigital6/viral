@@ -25,12 +25,30 @@ class BlogController extends Controller
     }
 
     public function store(BlogRequest $request){
-//        dd($request);
-        $blog=Blog::create($request->all());
-        $image = $request->file('image')->store('public/blog');
+//     dd($request);
+        // Validate the request data
+        $validatedData = $request->validated();
 
-        $blog->image = str_replace('public/', '', $image);
-        $blog->save();
+        // Handle image uploads
+        $imageFields = ['image', 'user_image',];
+
+        foreach ($imageFields as $field) {
+            if ($request->hasFile($field)) {
+                $imagePath = $request->file($field)->store('public/blog');
+                // Save the image path without 'public/' prefix
+                $validatedData[$field] = str_replace('public/', '', $imagePath);
+            }
+        }
+
+        // Create the About model instance with the validated data
+        Blog::create($validatedData);
+
+
+//        $blog=Blog::create($request->all());
+//        $image = $request->file('image')->store('public/blog');
+//
+//        $blog->image = str_replace('public/', '', $image);
+//        $blog->save();
         return redirect()->route('blogs.index')->with('success', 'Blog  created successfully.');
     }
 
@@ -40,14 +58,21 @@ class BlogController extends Controller
     }
 
     public function update(Blog $blog , BlogRequest $request){
-        $blogData = $request->all();
+        $validatedData = $request->validated();
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/blog');
-            $blogData['image'] = str_replace('public/', '', $imagePath);
+        // Handle image uploads
+        $imageFields = ['image', 'user_image',];
+
+        foreach ($imageFields as $field) {
+            if ($request->hasFile($field)) {
+                $imagePath = $request->file($field)->store('public/blog');
+                // Save the image path without 'public/' prefix
+                $validatedData[$field] = str_replace('public/', '', $imagePath);
+            }
         }
 
-        $blog->update($blogData);
+        // Create the About model instance with the validated data
+        $blog->update($validatedData);
 
         return redirect()->route('blogs.index')->with('success', 'blog item successfully updated');
     }
