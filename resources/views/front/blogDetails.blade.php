@@ -1,4 +1,4 @@
-@extends('frontLayouts.main')
+@extends('frontLayouts.main', ['seos' => $seos])
 @section('title', 'BlogCard')
 @section('content')
     <!-- Page Header Start -->

@@ -1,4 +1,4 @@
-@extends('frontLayouts.main')
+@extends('frontLayouts.main', ['seos' => $seos])
 @section('title', 'Services')
 @section('content')
 

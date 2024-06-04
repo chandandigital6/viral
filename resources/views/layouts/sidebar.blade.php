@@ -148,6 +148,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('seo.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-podcast"></i>
+                        <p>
+                            SEO
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('logout')}}" class="nav-link">
                         <i class="nav-icon fa fa-support"></i>
                         <p>

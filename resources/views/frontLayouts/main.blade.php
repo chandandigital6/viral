@@ -4,9 +4,9 @@
 
 <head>
     <title>@yield('title','SEO Services, Digital Marketing Agency That Drives ROI')</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Viral Business is a reliable digital marketing agency. We offer SEO, Website development, Content marketing & Social media services and much more at affordable prices.">
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
+{{--    <meta name="description" content="Viral Business is a reliable digital marketing agency. We offer SEO, Website development, Content marketing & Social media services and much more at affordable prices.">--}}
 
     <link rel="canonical" href="https://viralbusinessgroup.com">
     <meta property="og:locale" content="en_US" />
@@ -21,6 +21,11 @@
     <meta name="twitter:data1" content="Ankush Goyal">
     <meta name="twitter:label2" content="Est. reading time">
     <meta name="twitter:data2" content="12 minutes">
+
+    @foreach($seos as $seo)
+
+        <meta name="{{$seo->name}}" property="{{$seo->property}}" content="{{$seo->content}}">
+    @endforeach
     <!-- Required meta tags -->
 
     <!-- Links of CSS files -->

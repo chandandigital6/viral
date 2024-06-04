@@ -19,6 +19,7 @@ use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SEOController;
 
 /*
 |--------------------------------------------------------------------------
@@ -227,6 +228,14 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('faq/duplicate/{faq}',[FaqController::class,'duplicate'])->name('faq.duplicate');
 
 
+    Route::prefix('seo')->name('seo.')->group(function(){
+       Route::get('/', [SEOController::class, 'index'])->name('index');
+       Route::get('create', [SEOController::class, 'create'])->name('create');
+       Route::post('store', [SEOController::class, 'store'])->name('store');
+       Route::get('edit/{seo}', [SEOController::class, 'edit'])->name('edit');
+       Route::post('update/{seo}', [SEOController::class, 'update'])->name('update');
+       Route::get('delete/{seo}', [SEOController::class, 'delete'])->name('delete');
+    });
 
 });
 
