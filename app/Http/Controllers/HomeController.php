@@ -91,23 +91,29 @@ class HomeController extends Controller
         return view('front.menu',compact('categories', 'seos'));
     }
     public function joinUs(){
-<<<<<<< HEAD
+
         $seos = SEO::where('page', 'join-us')->get();
         return view('front.joinUs', compact('seos'));
     }
 
-    public function jobs(){
-        $seos = SEO::where('page', 'jobs')->get();
-        return view('front.jobs', compact('seos'));
-=======
+//    public function jobs(){
+//        $seos = SEO::where('page', 'jobs')->get();
+//        return view('front.jobs', compact('seos'));
+//
+//
+//    }
+
+    public function join(){
         $joins=join::all();
         $benefits=Plan::all();
-        return view('front.joinUs',compact('joins','benefits'));
+        $seos = SEO::where('page', 'join-us')->get();
+        return view('front.joinUs',compact('joins','benefits', 'seos'));
     }
 
     public function jobs(){
         $jobs=Job::all();
-        return view('front.jobs',compact('jobs'));
->>>>>>> 787bca9e6d6aaca85083d47f58df130f0f160b8b
+        $seos = SEO::where('page', 'jobs')->get();
+        return view('front.jobs',compact('jobs', 'seos'));
+
     }
 }
