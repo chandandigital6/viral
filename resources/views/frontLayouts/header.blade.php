@@ -18,22 +18,22 @@
                 </li>
                 <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Services <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="search-engine-optimization.html">Search Engine Optimization</a></li>
-                        <li><a href="local-seo-services.html">Local SEO</a></li>
-                        <li><a href="ppc-management.html">Pay Per Click Management</a></li>
-                        <li><a href="google-analytics-services.html">Google Analytics Service</a></li>
-                        <li><a href="conversion-rate-optimization.html">Conversion Rate Optimization</a></li>
-                        <li><a href="social-media-management.html">Social Media Management</a></li>
-                        <li><a href="social-media-brand-management.html">Social Media Brand Management</a></li>
-                        <li><a href="online-reputation-management.html">Online Reputation Management</a></li>
-                        <li><a href="social-media-paid-advertising.html">Social Media Paid Advertising</a></li>
-                        <li><a href="custom-website-design.html">Custom Website Design</a></li>
-                        <li><a href="content-writing.html">Content Writing</a></li>
-                        <li><a href="content-marketing.html">Content Marketing</a></li>
-                        <li><a href="email-marketing-services.html">Email Marketing Services</a></li>
-                        <li><a href="youtube-video-marketing.html">YouTube Video Marketing</a></li>
-                        <li><a href="youtube-channel-monetization.html">Youtube Channel Monetization</a></li>
-                        <li><a href="video-production.html">Video Production</a></li>
+                        <li><a href="{{route('search-engine-optimization')}}">Search Engine Optimization</a></li>
+                        <li><a href="{{route('local-seo')}}">Local SEO</a></li>
+                        <li><a href="{{route('ppc')}}">Pay Per Click Management</a></li>
+                        <li><a href="">Google Analytics Service</a></li>
+                        <li><a href="{{route('conversion-rate')}}">Conversion Rate Optimization</a></li>
+                        <li><a href="{{route('social-media-marketing')}}">Social Media Management</a></li>
+                        <li><a href="{{route('social-brand-management')}}">Social Media Brand Management</a></li>
+                        <li><a href="{{route('online-reputation-management')}}">Online Reputation Management</a></li>
+                        <li><a href="{{route('social-media-paid-advertising')}}">Social Media Paid Advertising</a></li>
+                        <li><a href="{{route('custom-website')}}">Custom Website Design</a></li>
+                        <li><a href="{{route('content-writing')}}">Content Writing</a></li>
+                        <li><a href="{{route('content-marketing')}}">Content Marketing</a></li>
+                        <li><a href="{{route('email-marketing')}}">Email Marketing Services</a></li>
+                        <li><a href="{{route('youTube-marketing')}}">YouTube Video Marketing</a></li>
+                        <li><a href="{{route('youTube-monetization')}}">Youtube Channel Monetization</a></li>
+                        <li><a href="{{route('video-production')}}">Video Production</a></li>
                     </ul>
                 </li>
                 <li><a href="{{route('blogCard')}}">Blogs</a></li>
@@ -82,11 +82,11 @@
                                 <div class="dropdown__menu">
                                     <div class="dropdown__column">
                                         <div class="dropdown__title">Digital Marketing</div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="search-engine-optimization.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Search Engine Optimization</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="local-seo-services.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Local SEO</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link " href="ppc-management.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Pay Per Click Management</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="google-analytics-services.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Google Analytics Service</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="conversion-rate-optimization.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Conversion Rate Optimization</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('search-engine-optimization')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Search Engine Optimization</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('local-seo')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Local SEO</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link " href="{{route('ppc')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pay Per Click Management</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Google Analytics Service</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('conversion-rate')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Conversion Rate Optimization</a> </div>
                                     </div>
                                     <div class="dropdown__column">
                                         <div class="dropdown__title">Social Media Marketing</div>
@@ -95,23 +95,23 @@
                                                     <a class="dropdown__link" href="social-media-marketing.php"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Marketing</a>
 
                                                 </div> -->
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="social-media-management.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Management</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="social-media-brand-management.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Brand Management</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="online-reputation-management.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Online Reputation Management</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="social-media-paid-advertising.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Paid Advertising</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('social-media-marketing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Management</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('social-brand-management')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Brand Management</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('online-reputation-management')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Online Reputation Management</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('social-media-paid-advertising')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Social Media Paid Advertising</a> </div>
                                     </div>
                                     <div class="dropdown__column">
                                         <div class="dropdown__title">Website Design</div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="custom-website-design.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Custom Website Design</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="content-writing.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Content Writing</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="content-marketing.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Content Marketing</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="email-marketing-services.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Email Marketing Services</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('custom-website')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Custom Website Design</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('content-writing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Content Writing</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('content-marketing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Content Marketing</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('email-marketing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Email Marketing Services</a> </div>
                                     </div>
                                     <div class="dropdown__column">
                                         <div class="dropdown__title">Video Marketing</div>
-                                        <div class="dropdown__item"> <a class="dropdown__link" href="youtube-video-marketing.html"><i class="fa fa-caret-right" aria-hidden="true"></i>YouTube Video Marketing</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link " href="youtube-channel-monetization.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Youtube Channel Monetization</a> </div>
-                                        <div class="dropdown__item"> <a class="dropdown__link " href="video-production.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Video Production</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('youTube-marketing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>YouTube Video Marketing</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link " href="{{route('youTube-monetization')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Youtube Channel Monetization</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link " href="{{route('video-production')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Video Production</a> </div>
                                     </div>
                                 </div>
                             </div>

@@ -90,11 +90,11 @@ class HomeController extends Controller
         $seos = SEO::where('page', 'menu')->get();
         return view('front.menu',compact('categories', 'seos'));
     }
-    public function joinUs(){
-
-        $seos = SEO::where('page', 'join-us')->get();
-        return view('front.joinUs', compact('seos'));
-    }
+//    public function joinUs(){
+//
+//        $seos = SEO::where('page', 'join-us')->get();
+//        return view('front.joinUs', compact('seos'));
+//    }
 
 //    public function jobs(){
 //        $seos = SEO::where('page', 'jobs')->get();
@@ -103,17 +103,108 @@ class HomeController extends Controller
 //
 //    }
 
-    public function join(){
+    public function joinUs(){
         $joins=join::all();
         $benefits=Plan::all();
         $seos = SEO::where('page', 'join-us')->get();
-        return view('front.joinUs',compact('joins','benefits', 'seos'));
+        return view('front.joinUs', compact( 'benefits', 'seos','joins'));
     }
 
     public function jobs(){
         $jobs=Job::all();
         $seos = SEO::where('page', 'jobs')->get();
         return view('front.jobs',compact('jobs', 'seos'));
+
+    }
+
+    public function search_engine_optimization(){
+        $seos = SEO::where('page', 'search-engine-optimization')->get();
+        return view('front.search-engine-optimization',compact('seos'));
+    }
+
+    public function local_seo(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.local-seo',compact('seos'));
+
+    }
+    public function ppc(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.ppc',compact('seos'));
+
+    }
+
+    public function Conversion_Rate_Optimization(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.conversion_rate',compact('seos'));
+
+    }
+
+    public function social_media_marketing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.social_media_marketing',compact('seos'));
+
+    }
+
+    public function social_brand_marketing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.social_brand_marketing',compact('seos'));
+
+    }
+
+    public function online_reputation_management(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.online_reputation_management',compact('seos'));
+
+    }
+
+
+    public function Social_Media_Paid_Advertising(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.Social_Media_Paid_Advertising',compact('seos'));
+
+    }
+
+
+    public function custom_website(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.custom_website',compact('seos'));
+
+    }
+
+    public function content_writing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.content_writing',compact('seos'));
+
+    }
+
+    public function content_marketing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.content_marketing',compact('seos'));
+
+    }
+
+    public function email_marketing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.email_marketing',compact('seos'));
+
+    }
+
+    public function youTube_marketing(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.youTube_marketing',compact('seos'));
+
+    }
+
+
+    public function youTube_Monetization(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.youTube_Monetization',compact('seos'));
+
+    }
+
+    public function video_production(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.video_production',compact('seos'));
 
     }
 }

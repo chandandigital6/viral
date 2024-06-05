@@ -47,6 +47,34 @@ Route::get('/jobs',[HomeController::class,'jobs'])->name('jobs');
 Route::get('/blogCard',[HomeController::class,'blog'])->name('blogCard');
 Route::get('/blogDetails/{blog}',[HomeController::class,'blogDetails'])->name('blog-details');
 
+//services
+
+Route::get('/search-engine-optimization',[HomeController::class,'search_engine_optimization'])->name('search-engine-optimization');
+Route::get('/local-seo',[HomeController::class,'local_seo'])->name('local-seo');
+Route::get('/ppc',[HomeController::class,'ppc'])->name('ppc');
+Route::get('/conversion-rate',[HomeController::class,'Conversion_Rate_Optimization'])->name('conversion-rate');
+Route::get('/social-media-marketing',[HomeController::class,'social_media_marketing'])->name('social-media-marketing');
+Route::get('/social-brand-management',[HomeController::class,'social_brand_marketing'])->name('social-brand-management');
+Route::get('/online-reputation-management',[HomeController::class,'online_reputation_management'])->name('online-reputation-management');
+Route::get('/social-media-paid-advertising',[HomeController::class,'Social_Media_Paid_Advertising'])->name('social-media-paid-advertising');
+Route::get('/custom-website',[HomeController::class,'custom_website'])->name('custom-website');
+Route::get('/content-writing',[HomeController::class,'content_writing'])->name('content-writing');
+Route::get('/content-marketing',[HomeController::class,'content_marketing'])->name('content-marketing');
+Route::get('/email-marketing',[HomeController::class,'email_marketing'])->name('email-marketing');
+Route::get('/youTube-marketing',[HomeController::class,'youTube_marketing'])->name('youTube-marketing');
+Route::get('/youTube-monetization',[HomeController::class,'youTube_Monetization'])->name('youTube-monetization');
+Route::get('/video_production',[HomeController::class,'video_production'])->name('video-production');
+
+
+
+
+
+
+
+
+
+
+
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
 Route::get('registration',[AuthController::class,'registration'])->name('registration');
 //Route::post('store', [AuthController::class, 'store'])->name('auth.store');
@@ -58,7 +86,13 @@ Route::post('forget',[AuthController::class,'forget_pass'])->name('auth.forget_p
 Route::get('reset-password',[AuthController::class,'reset_password'])->name('reset-password');
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
+
+
+
+
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+
+
 
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])
