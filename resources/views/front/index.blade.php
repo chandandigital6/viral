@@ -34,7 +34,10 @@
                                 </h1>
                                 <p>We’re a Digital Marketing Agency, known for our no-nonsense approach. Just straight talking and smart thinking, delivered by people who care about your business.</p>
                             </div>
-                            <div class="btn-box"> <a href="contact-us.html" target="_blank" class="default-btn bttn-G">Contact Us</a> <a href="tel:+91- 98766 66605" class="default-btn2 bttn-D">Request a Call</a> </div>
+                            <div class="btn-box">
+                                <a href="contact-us.html" target="_blank" class="default-btn bttn-G">Contact Us</a>
+                                <a href="tel:+91-98766-66605" class="default-btn2 bttn-D">Request a Call</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,13 +49,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <div class="brand-stars"> <a href="https://www.trustpilot.com/review/viralbusinessgroup.com"><img src="{{asset('asset/img/trust.png')}}"></a> </div>
+                    <div class="brand-stars">
+                        <a href="https://www.trustpilot.com/review/viralbusinessgroup.com">
+                            <img src="{{ asset('asset/img/trust.png') }}" alt="Trustpilot">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-4">
-                    <div class="brand-stars"> <a href="https://www.sitejabber.com/reviews/viralbusinessgroup.com"><img src="{{asset('asset/img/sitejabber.png')}}"></a> </div>
+                    <div class="brand-stars">
+                        <a href="https://www.sitejabber.com/reviews/viralbusinessgroup.com">
+                            <img src="{{ asset('asset/img/sitejabber.png') }}" alt="Sitejabber">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-4">
-                    <div class="brand-stars"> <a href="https://g.page/viralbusinessgroup?gm"><img src="{{asset('asset/img/googleshop.png')}}"></a> </div>
+                    <div class="brand-stars">
+                        <a href="https://g.page/viralbusinessgroup?gm">
+                            <img src="{{ asset('asset/img/googleshop.png') }}" alt="Google Shop">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,26 +76,28 @@
     <section class="about-area pb-100 pb-1001">
         <div class="container-fluid">
             @foreach($about as $aboutUs)
-
-
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="about-img"> <img src="{{asset('storage/'.$aboutUs->image)}}" alt="Digital Marketing Growth"> </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="about-content">
-                        <div class="text">
-                            <span class="sub-title">{{$aboutUs->title}}</span>
-                            <h2>{{$aboutUs->heading}}</h2>
-                            <p>{!! $aboutUs->description !!}</p>
-                            <a href="{{route('about')}}" class="default-btn">More About Us</a>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-img">
+                            <img src="{{ asset('storage/' . $aboutUs->image) }}" alt="Digital Marketing Growth">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-content">
+                            <div class="text">
+                                <span class="sub-title">{{ $aboutUs->title }}</span>
+                                <h2>{{ $aboutUs->heading }}</h2>
+                                <p>{!! $aboutUs->description !!}</p>
+                                <a href="{{ route('about') }}" class="default-btn">More About Us</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
-        <div class="shape15"><img src="{{asset('asset/img/shape/shape15.png')}}" alt="shape15"></div>
+        <div class="shape15">
+            <img src="{{ asset('asset/img/shape/shape15.png') }}" alt="shape15">
+        </div>
     </section>
     <!-- End About Area -->
     <!-- Start Services Area -->
@@ -91,32 +108,29 @@
                 <h2>What We Offer?</h2>
                 <p>These are the categories that we have expertise in. We constantly add more services to our arsenal.</p>
             </div>
-            <!--  =========start-services======= -->
             <div class="row service-wrapper">
                 @foreach($services as $service)
-
-
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="103" src="{{asset('storage/'.$service->image)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Social Media Marketing"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>{{$service->title}}</h3>
-                            <p>{!! $service->short_description !!} </p>
-                            <div class="hovereffect"> <span>
-                  <a href="{{route('serviceDetails',$service->id)}}" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a></span>
+                    <div class="col-md-4 text-center">
+                        <div class="tw-service-box">
+                            <div class="service-icon service-icon-bg d-table">
+                                <div class="service-icon-inner d-table-cell">
+                                    <img width="100" height="103" src="{{ asset('storage/' . $service->image) }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="{{ $service->title }}">
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <h3>{{ $service->title }}</h3>
+                                <p>{!! $service->short_description !!}</p>
+                                <div class="hovereffect">
+                                    <span>
+                                        <a href="{{ route('serviceDetails', $service->id) }}" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
                 @endforeach
-
-
-                <!-- ========end-Services======= -->
             </div>
-        </div>>
+        </div>
     </section>
     <!-- End Services Area -->
     <!-- Start What We Do Area -->
@@ -125,9 +139,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="what-we-do-content">
-                        <!-- <span class="sub-title">What We Do</span> -->
                         <h2>Guaranteed Success When You Choose Viral Business</h2>
-                        <p>Viral Business is a result-oriented company with the primary focus of delivering exceptional services at competitive price. We value money and make sure that no client leaves with less than satisfactory results. We go the extra mile to keep our clients happy.</p>
+                        <p>Viral Business is a result-oriented company with the primary focus of delivering exceptional services at competitive prices. We value money and make sure that no client leaves with less than satisfactory results. We go the extra mile to keep our clients happy.</p>
                         <div class="skills-item">
                             <div class="skills-header">
                                 <h4 class="skills-title">Digital Marketing</h4>
@@ -180,36 +193,21 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="{{ route('contact') }}" class="default-btn">Contact Us</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <div class="what-we-do-content-accordion">
-                        <ul class="accordion">
-                            <li class="accordion-item">
-                                <a class="accordion-title active" href="javascript:void(0)"> <i class="flaticon-plus"></i> Traffic </a>
-                                <div class="accordion-content show">
-                                    <p>As a Digital Marketing company, we are well aware about the needs of our customers. They want more traffic on their websites, as it would help them to earn more profits and increase reputation of their business. Our experts optimize websites in such a way that all the requirements of a client gets fulfilled.</p>
-                                </div>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)"> <i class="flaticon-plus"></i> Leads </a>
-                                <div class="accordion-content">
-                                    <p>Getting leads on a website means that more customers would be able to see your website during search query and open it. Usage of Keywords, their density, Internal Linking, External Linking are all the SEO practices that help your website to rank. Getting more leads results in more traffic as everything is connected.</p>
-                            </li>
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)"> <i class="flaticon-plus"></i> Revenue </a>
-                                <div class="accordion-content">
-                                    <p>Now that a website is visible and people are visiting it, the next step is to earn money from their visit. It can be done through advertisements on a website or selling products to an interested audience. Knowing the type of audience can greatly decide whether a website would earn money or not.</p>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="what-we-do-image">
+                        <img src="{{ asset('asset/img/what-we-do.jpg') }}" alt="what-we-do-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End What We Do Area -->
-    <!-- Start Feedback Area -->
+{{--@endsection--}}
+
+<!-- Start Feedback Area -->
 {{--    <section class="feedback-area ptb-100">--}}
 {{--        <div class="container">--}}
 {{--            <div class="row align-items-center">--}}
@@ -320,11 +318,9 @@
 {{--        </div>--}}
 {{--    </section>--}}
     <!-- End Feedback Area -->
-    <!-- End Team Area -->
-    <div class="viral-content">
-        @foreach($homeContents as $homeSection)
-
-
+<!-- End Team Area -->
+<div class="viral-content">
+    @foreach($homeContents as $homeSection)
         <div class="container">
             <div class="contentPART">
                 <h2>{{$homeSection->title}}</h2>
@@ -333,7 +329,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="service-content">
-                  {!! $homeSection->content_1 !!}
+                        {!! $homeSection->content_1 !!}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -343,18 +339,18 @@
                 </div>
             </div>
         </div>
-        @endforeach
-    </div>
+    @endforeach
+</div>
 
-    <!-- Start Project Start Area -->
-    <section class="project-start-area ptb-100">
-        @foreach($homeProjects as $homeProject)
-
-
+<!-- Start Project Start Area -->
+<section class="project-start-area ptb-100">
+    @foreach($homeProjects as $homeProject)
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
-                    <div class="project-start-image"> <img src="{{asset('storage/'.$homeProject->image)}}" alt="Digital Marketing Agency"> </div>
+                    <div class="project-start-image">
+                        <img src="{{asset('storage/'.$homeProject->image)}}" alt="Digital Marketing Agency">
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="project-start-content">
@@ -366,31 +362,30 @@
                 </div>
             </div>
         </div>
-        @endforeach
-        <div class="shape2"><img src="{{asset('asset/img/shape/shape2.png')}}" alt="shape2"></div>
-        <div class="shape3"><img src="{{asset('asset/img/shape/shape3.png')}}" alt="shape3"></div>
-        <div class="shape5"><img src="{{asset('asset/img/shape/shape5.png')}}" alt="shape5"></div>
-        <div class="shape6"><img src="{{asset('asset/img/shape/shape6.png')}}" alt="shape6"></div>
-        <div class="shape7"><img src="{{asset('asset/img/shape/shape7.png')}}" alt="shape7"></div>
-        <div class="shape13"><img src="{{asset('asset/img/shape/shape13.png')}}" alt="shape13"></div>
-    </section>
-    <!-- End Project Start Area -->
-    <!-- Start Blog Area -->
-    <section class="blog-area bg-f9f9f9 pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">Our Blog</span>
-                <h2>Our Latest Media</h2>
-                <p>Our campaigns get your business in front of the right people at the right time to increase organic traffic and boost engagement.</p>
-            </div>
-            <div class="row">
-                @foreach($blogs as $blog)
+    @endforeach
+    <div class="shape2"><img src="{{asset('asset/img/shape/shape2.png')}}" alt="shape2"></div>
+    <div class="shape3"><img src="{{asset('asset/img/shape/shape3.png')}}" alt="shape3"></div>
+    <div class="shape5"><img src="{{asset('asset/img/shape/shape5.png')}}" alt="shape5"></div>
+    <div class="shape6"><img src="{{asset('asset/img/shape/shape6.png')}}" alt="shape6"></div>
+    <div class="shape7"><img src="{{asset('asset/img/shape/shape7.png')}}" alt="shape7"></div>
+    <div class="shape13"><img src="{{asset('asset/img/shape/shape13.png')}}" alt="shape13"></div>
+</section>
+<!-- End Project Start Area -->
 
-
+<!-- Start Blog Area -->
+<section class="blog-area bg-f9f9f9 pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Our Blog</span>
+            <h2>Our Latest Media</h2>
+            <p>Our campaigns get your business in front of the right people at the right time to increase organic traffic and boost engagement.</p>
+        </div>
+        <div class="row">
+            @foreach($blogs as $blog)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post">
                         <div class="image">
-                            <a href="blog.html" class="d-block"> <img src="{{asset('storage/'.$blog->image)}}" alt="image"> </a>
+                            <a href="blog.html" class="d-block"><img src="{{asset('storage/'.$blog->image)}}" alt="image"></a>
                         </div>
                         <div class="content">
                             <h3><a href="{{route('blogCard')}}">{{$blog->title}}</a></h3>
@@ -405,85 +400,73 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-
-
-            </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
+<!-- End Blog Area -->
 
-
-
-    <section class="tabbed-set">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="tile" id="tile-1">
-                        <ul class="nav nav-tabs nav-justified" role="tablist">
-                            @foreach($categories as $index => $category)
-                                <li class="nav-item">
-                                    <a class="nav-link @if($index === 0) active @endif" id="tab-{{ $category->id }}" data-toggle="tab" href="#content-{{ $category->id }}" role="tab" aria-controls="content-{{ $category->id }}" aria-selected="@if($index === 0) true @endif">{{ $category->name }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+<section class="tabbed-set">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="tile" id="tile-1">
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        @foreach($categories as $index => $category)
+                            <li class="nav-item">
+                                <a class="nav-link @if($index === 0) active @endif" id="tab-{{ $category->id }}" data-toggle="tab" href="#content-{{ $category->id }}" role="tab" aria-controls="content-{{ $category->id }}" aria-selected="@if($index === 0) true @endif">{{ $category->name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="col-lg-9">
-                    <div class="navList-TXT">
-                        <div class="tab-content">
-                            @foreach($categories as $index => $category)
-                                <div class="tab-pane fade @if($index === 0) show active @endif" id="content-{{ $category->id }}" role="tabpanel" aria-labelledby="tab-{{ $category->id }}">
-                                    @if($category->menus->count())
-                                        <ul>
-                                            @foreach($category->menus as $menu)
-                                                <li>{!! $menu->heading !!}</li>
-                                            @endforeach
-                                        </ul>
-                                    @else
-                                        <p>No menus available for this category.</p>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="navList-TXT">
+                    <div class="tab-content">
+                        @foreach($categories as $index => $category)
+                            <div class="tab-pane fade @if($index === 0) show active @endif" id="content-{{ $category->id }}" role="tabpanel" aria-labelledby="tab-{{ $category->id }}">
+                                @if($category->menus->count())
+                                    <ul>
+                                        @foreach($category->menus as $menu)
+                                            <li>{!! $menu->heading !!}</li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <p>No menus available for this category.</p>
+                                @endif
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Nav tabs -->
-    <!-- Tab panes -->
-    <!-- End Blog Area -->
-    {{--faq--}}
-    <section id="FAQ" class="spacer">
-        <div class="container">
-            <h2 class="faqTitle"><span>Frequently Asked Questions</span></h2>
-            <div id="faq" class="faq-body">
-                <div class="faq-header">
-                    <div class="faq-list">
+    </div>
+</section>
 
-                        @foreach($faqs as $faq)
-
-
+<!-- Start FAQ Area -->
+<section id="FAQ" class="spacer">
+    <div class="container">
+        <h2 class="faqTitle"><span>Frequently Asked Questions</span></h2>
+        <div id="faq" class="faq-body">
+            <div class="faq-header">
+                <div class="faq-list">
+                    @foreach($faqs as $faq)
                         <div>
                             <details open>
                                 <summary title="{{$faq->question}}">{{$faq->question}}</summary>
                                 <p class="faq-content">{{$faq->answer}}</p>
                             </details>
                         </div>
-
-                        @endforeach
-
-
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>>
-    </section>
-    {{-- faq end--}}
-    <section class="ourClients  ptb-100">
-        @foreach($logos as $logo)
+        </div>
+    </div>
+</section>
+<!-- End FAQ Area -->
 
-
+<section class="ourClients ptb-100">
+    @foreach($logos as $logo)
         <div class="container">
             <div class="benifitsTitle clientSET">
                 <h2>{{$logo->title}}</h2>
@@ -502,14 +485,11 @@
                         </div>
                     @endforeach
                 @endif
-
-
-
-
-
             </div>
         </div>
-        @endforeach
-    </section>
-    <div class="clear"></div>
+    @endforeach
+</section>
+<div class="clear"></div>
+
+
 @endsection

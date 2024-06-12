@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{asset('asset/css/odometer.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/magnific-popup.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/responsive.scss')}}">
     <link rel="icon" type="image/png" href="{{asset('asset/img/viral-fav.png')}}">
 {{--    <style>--}}
 {{--        .nav-link:hover, .dropdown-item:hover {--}}
@@ -61,7 +61,7 @@
 <!-- End Top Mobile Area -->
 @include('frontLayouts.header')
 <!-- End Navbar Area -->
-<!-- Sidebar Modal -->
+{{--<!-- Sidebar Modal -->--}}
 {{--<div class="sidebarModal modal right fade" id="sidebarModal" tabindex="-1" role="dialog">--}}
 {{--    <div class="modal-dialog" role="document">--}}
 {{--        <div class="modal-content">--}}
@@ -125,8 +125,8 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<!-- End Sidebar Modal -->
-<!-- Search Overlay -->
+{{--<!-- End Sidebar Modal -->--}}
+{{--<!-- Search Overlay -->--}}
 {{--<div class="search-overlay">--}}
 {{--    <div class="d-table">--}}
 {{--        <div class="d-table-cell">--}}
@@ -143,7 +143,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<!-- End Search Overlay -->
+{{--<!-- End Search Overlay -->--}}
 
 {{--<div class="newsletter-overlay">--}}
 {{--    <div id="newsletter-popup"> <a href="#" class="popup-close">X</a>--}}
@@ -163,7 +163,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<!-- home-popup-html=============== -->
+{{--<!-- home-popup-html=============== -->--}}
 
 @yield('content')
 
