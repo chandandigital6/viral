@@ -10,6 +10,8 @@ use App\Models\choze;
 use App\Models\ClientLogo;
 use App\Models\Counter;
 use App\Models\Faq;
+use App\Models\HomeProject;
+use App\Models\HomeSection;
 use App\Models\Job;
 use App\Models\join;
 use App\Models\Menu;
@@ -39,8 +41,10 @@ class HomeController extends Controller
         $faqs=Faq::all();
         $logos=ClientLogo::all();
 //        dd($faqs);
+        $homeContents=HomeSection::all();
+        $homeProjects=HomeProject::all();
         $seos = SEO::where('page', 'index')->get();
-        return view('front.index',compact('logos','seos','banner','categories','faqs','counters','blogs','about','services','plans','testimonials','teams'));
+        return view('front.index',compact('homeProjects','homeContents','logos','seos','banner','categories','faqs','counters','blogs','about','services','plans','testimonials','teams'));
       }
       public function about(){
           $teams=Team::all();

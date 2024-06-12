@@ -322,64 +322,51 @@
     <!-- End Feedback Area -->
     <!-- End Team Area -->
     <div class="viral-content">
+        @foreach($homeContents as $homeSection)
+
+
         <div class="container">
             <div class="contentPART">
-                <h2>Regret Is Not an Option While Choosing <br>Viral Business</h2>
-                <p>You Want to Showcase Your Business in Top Join With Us</p>
+                <h2>{{$homeSection->title}}</h2>
+                <p>{{$homeSection->sort_msg}}</p>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="service-content">
-                        <h3>Why you Need Digital Marketing?</h3>
-                        <p>Digital Marketing has become a necessity nowadays as business want to grow both in the offline and online market. Viral Business is a Digital Marketing company that has been in the industry since a long time.</p>
-                        <p>Marketing is required to promote any type of business. Without it, the intended goal cannot be achieved, which is mostly to earn money. Digital Marketing helps startups and businesses to make their presence felt online.</p>
-                        <h3>Your Needs = Our Responsibility</h3>
-                        <p>We understand that requirements of people change with passing time and a company must be flexible to cater to a client’s needs. Viral Business does exactly that by constantly evolving and keeping customers at top.</p>
-                        <p>We are fully aware that a company stays in market only because of the support they receive from customers. Without them, it is impossible for a company to stay and improve themselves. There have been numerous examples of companies with great services getting rejected because of no support.</p>
-                        <p>Keeping customers at top helps us to view our company in a different light. Not only that, but our clients and website visitors also get that image about us. It is not just an image but a reality that we have worked hard to achieve. It has taken us time to establish ourselves as the kings of Digital Marketing.</p>
-                        <h3>Pricing that is Competitive</h3>
-                        <p>Now you must be thinking that all the services and the price must be high. No, that is fortunately not true. We value our client’s hard earned money and know that they must get worth of each penny that they invest in us. That is why, we deliver our services at competitive pricing.</p>
-                        <p>Competitive Pricing helps us to stand out among other similar Digital Marketing companies. We have many packages and we are sure that there is everything for someone. We do not want any of our clients to get a bad service from us.</p>
-                        <p>We have the motivation and the confidence required to make your website stand out among thousands of other websites. After all, getting even a little advantage over competitors can result in great profits.</p>
-                        <p>We have many packages that you can choose from. Choose a package that suits your needs and your pocket. We have built the packages by thinking from a client’s perspective, which is why Viral Business is an affordable Digital Marketing company.</p>
+                  {!! $homeSection->content_1 !!}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="service-content">
-                        <h3>Customers are God</h3>
-                        <p>At Viral Business, we believe that customers must be our only priority. We hate when a client has to get their work done from several agencies because there are only a few companies that offer all services at one place.</p>
-                        <p>Viral Business is a company that does exactly that, because we offer all Digital Marketing services at one place. Basically, we are a one stop shop for all your Digital Marketing needs.</p>
-                        <h3>Inculcating New and Effective Technologies</h3>
-                        <p>Our constant upgrades in technology and staff has helped us to maintain that image. It rarely happens but if we feel that our staff is lacking in some way- skills or motivation, we make sure to conduct seminars and workshops to boost their morale and keep them driven.</p>
-                        <p>We believe that even the most skilled people need to brush their skills once in a while. It helps them to know that they still have the capability of performing, which is a sure way of increasing their confidence.</p>
-                        <p>Increased confidence can not only help the workplace, but also help a person to achieve goals in their personal lives. When a person is happy, it reflects in their work, which is beneficial for the company as well as the clients.</p>
-                        <h3>Reviews Prove Our Worth</h3>
-                        <p>Now that you have checked our services, technologies we use, pricing and other important aspects, what is left?</p>
-                        <p>An important aspect that is left is client’s reviews and testimonials. Yes it is essential for a company to prove their worth. We are not afraid to show them because we do all work with complete honesty.</p>
-                        <p>A company that believes in their capability is never afraid of showing the work they have done. That is why we display reviews for our work openly and proudly. We even go to the extent of providing contact information of our clients, so that you can check whether great services were delivered or not.</p>
-                        <p>It is a sad reality that many Digital Marketing companies decide to take the wrong path. They display fake reviews and paid reviews. It is actually a very common practice in this industry. We do not even think about taking that path because we have expert staff that needs no shortcuts.</p>
+                        {!! $homeSection->content_2 !!}
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
+
     <!-- Start Project Start Area -->
     <section class="project-start-area ptb-100">
+        @foreach($homeProjects as $homeProject)
+
+
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
-                    <div class="project-start-image"> <img src="{{asset('asset/img/Project-With-Us.png')}}" alt="Digital Marketing Agency"> </div>
+                    <div class="project-start-image"> <img src="{{asset('storage/'.$homeProject->image)}}" alt="Digital Marketing Agency"> </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="project-start-content">
-                        <span class="sub-title">Get Started</span>
-                        <h2>We Like to Start Your Project With Us</h2>
-                        <p> We have established our brand value on the basis of our immaculate results, tangible ROI, professional approach to problems and tailor made solutions for any clients.</p>
-                        <a href="contact-us.html" class="default-btn">Get Started</a>
+                        <span class="sub-title">{{$homeProject->title}}</span>
+                        <h2>{{$homeProject->heading}}</h2>
+                        <p>{!! $homeProject->msg !!}</p>
+                        <a href="{{route('contact')}}" class="default-btn">Get Started</a>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
         <div class="shape2"><img src="{{asset('asset/img/shape/shape2.png')}}" alt="shape2"></div>
         <div class="shape3"><img src="{{asset('asset/img/shape/shape3.png')}}" alt="shape3"></div>
         <div class="shape5"><img src="{{asset('asset/img/shape/shape5.png')}}" alt="shape5"></div>
