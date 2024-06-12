@@ -35,38 +35,33 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('banner.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
-                        <p>
-                            Banner
-                        </p>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nav-icon fa fa-address-book"></i>
+                        <p>home</p>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a href="{{ route('banner.index') }}" class="dropdown-item text-dark">Banner</a>
+                        <a href="{{ route('homeContent.index') }}" class="dropdown-item text-dark">HomeContent</a>
+                        <a href="{{ route('homeProject.index') }}" class="dropdown-item text-dark">HomeProject</a>
+                        <a href="{{ route('logo.index') }}" class="dropdown-item text-dark">ClientLogo</a>
+
+                    </div>
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('faq.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-bug"></i>
-                        <p>
-                        FAQ
-                        </p>
+
+
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nav-icon fa fa-address-book"></i>
+                        <p>About</p>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a href="{{ route('about.index') }}" class="dropdown-item text-dark">About Us</a>
+                        <a href="{{ route('choose.index') }}" class="dropdown-item text-dark">Choose Us</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('about.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-address-book"></i>
-                        <p>
-                            About Us
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('choose.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-address-book"></i>
-                        <p>
-                            Choose us
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                      <a href="{{route('appointment.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
@@ -76,14 +71,22 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                     <a href="{{route('service.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-bullseye"></i>
-                        <p>
-                            Our Services
-                        </p>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nav-icon fa fa-bullseye"></i>
+                        <p>Services</p>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a href="{{ route('service.index') }}" class="dropdown-item text-dark">Our Services</a>
+                        <a href="{{ route('ServiceDetails.index') }}" class="dropdown-item text-dark">ServicesSection</a>
+                        <a href="{{ route('serviceBenefits.index') }}" class="dropdown-item text-dark">ServiceBenefits</a>
+                        <a href="{{ route('serviceContent.index') }}" class="dropdown-item text-dark">ServiceContent</a>
+                        <a href="{{ route('serviceVideo.index') }}" class="dropdown-item text-dark">ServiceVideoSection</a>
+                        <a href="{{route('faq.index')}}" class="dropdown-item text-dark">ServiceFAQ</a>
+                    </div>
                 </li>
+
+
                 <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-fax"></i>
@@ -100,22 +103,18 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('joins.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-group"></i>
-                        <p>
-                            Join Us
-                        </p>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nav-icon fa fa-address-book"></i>
+                        <p>Join page</p>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a href="{{ route('joins.index') }}" class="dropdown-item text-dark">Join Us</a>
+                        <a href="{{ route('plan.index') }}" class="dropdown-item text-dark">JoinUS Benefits</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('plan.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-anchor"></i>
-                        <p>
-                          JoinUS Benefits
-                        </p>
-                    </a>
-                </li>
+
 
                 <li class="nav-item">
                     <a href="{{route('jobs.index')}}" class="nav-link">
@@ -133,14 +132,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('counter.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-cog"></i>
-                        <p>
-                          Counter
-                        </p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                     <a href="{{route('counter.index')}}" class="nav-link">--}}
+{{--                        <i class="nav-icon fa fa-cog"></i>--}}
+{{--                        <p>--}}
+{{--                          Counter--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                      <a href="{{route('category.index')}}" class="nav-link">

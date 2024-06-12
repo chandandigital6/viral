@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\choze;
+use App\Models\ClientLogo;
 use App\Models\Counter;
 use App\Models\Faq;
 use App\Models\Job;
@@ -15,6 +16,10 @@ use App\Models\Menu;
 use App\Models\Plan;
 use App\Models\SEO;
 use App\Models\Service;
+use App\Models\ServiceBenefit;
+use App\Models\ServiceContent;
+use App\Models\ServiceDetail;
+use App\Models\ServiceVideo;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -32,8 +37,10 @@ class HomeController extends Controller
         $counters=Counter::all();
         $blogs=Blog::all();
         $faqs=Faq::all();
+        $logos=ClientLogo::all();
+//        dd($faqs);
         $seos = SEO::where('page', 'index')->get();
-        return view('front.index',compact('seos','banner','categories','faqs','counters','blogs','about','services','plans','testimonials','teams'));
+        return view('front.index',compact('logos','seos','banner','categories','faqs','counters','blogs','about','services','plans','testimonials','teams'));
       }
       public function about(){
           $teams=Team::all();
@@ -75,15 +82,19 @@ class HomeController extends Controller
         $seos = SEO::where('page', 'blog')->get();
         return view('front.blogCard',compact('blogs', 'seos'));
     }
-    public function blogDetails(Blog $blog){
-//        dd($blog);
-        $categories = Blog::all();
-        $seos = SEO::where('page', 'blog-details')->get();
-        $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
-//
-        // Pass the data to the view
-        return view('front.blogDetails', compact('blog', 'categories', 'recentPosts', 'seos'));
+    public function blogDetails($service) {
+        $categories = Category::with('menus')->get();
+        $seos = SEO::where('page', 'blogDetail')->get();
+        $serviceDetail = ServiceDetail::with('service')->findOrFail($service);
+
+        $serviceBenefits = ServiceBenefit::with('service')->where('service_id', $service)->get();
+        $serviceFaqs = Faq::with('service')->where('service_id', $service)->get();
+        $serviceContent = ServiceContent::with('service')->where('service_id', $service)->get();
+        $serviceVideo = ServiceVideo::with('service')->where('service_id', $service)->get();
+
+        return view('front.blogDetails', compact('categories', 'serviceDetail', 'seos', 'serviceBenefits', 'serviceFaqs','serviceContent','serviceVideo'));
     }
+
 
     public function menu(){
         $categories = Category::with('menus')->get();

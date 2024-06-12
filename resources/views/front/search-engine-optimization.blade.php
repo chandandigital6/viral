@@ -29,7 +29,7 @@
     <section class="row service-about5 bottomspace">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-push-6 img-holder"> <img src="assets/img/seo00.png" alt="SEO"> </div>
+                <div class="col-md-6 col-md-push-6 img-holder"> <img src="{{asset('asset/img/seo00.png')}}" alt="SEO"> </div>
                 <div class="col-md-6 col-md-pull-6 text-holder">
                     <div class="row sectionTitle text-left">
                         <h2 class="this-title">Boost your website’s ranking with Professional SEO Services</h2>
@@ -37,10 +37,10 @@
                     </div>
                     <p class="this-p">We’re also experts at finding the sweet spot between Google’s guidelines and what is commercially right for you. We have progressive theories on search as a tool for retention of customers, not just for acquisition.</p>
                     <ul class="this-features list-unstyled">
-                        <li><span class="icon-holder"><img src="assets/img/26.png" alt="Perfect Design"></span>Perfect Design</li>
-                        <li><span class="icon-holder"><img src="assets/img/27.png" alt="Fully Responsive"></span>Fully Responsive</li>
-                        <li><span class="icon-holder"><img src="assets/img/28.png" alt="Fast Loading"></span>Fast Loading</li>
-                        <li><span class="icon-holder"><img src="assets/img/29.png" alt="Seo Friendly"></span>Seo Friendly</li>
+                        <li><span class="icon-holder"><img src="{{asset('asset/img/26.png')}}" alt="Perfect Design"></span>Perfect Design</li>
+                        <li><span class="icon-holder"><img src="{{asset('asset/img/27.png')}}" alt="Fully Responsive"></span>Fully Responsive</li>
+                        <li><span class="icon-holder"><img src="{{asset('asset/img/28.png')}}" alt="Fast Loading"></span>Fast Loading</li>
+                        <li><span class="icon-holder"><img src="{{asset('asset/img/29.png')}}" alt="Seo Friendly"></span>Seo Friendly</li>
                     </ul>
                 </div>
             </div>
@@ -56,42 +56,42 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/001.png" alt="Traffic"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/004.png')}}" alt="Traffic"> </div>
                         <h3>More Traffic</h3>
                         <p>As you gain more visibility, you will start to see an increase in the number of website visitors.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/002.png" alt="Leads"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/005.png')}}" alt="Leads"> </div>
                         <h3>More Leads</h3>
                         <p>We can target the audience that is most likely to be interested in your products and services.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/003.png" alt="Revenue"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/006.png')}}" alt="Revenue"> </div>
                         <h3>More Revenue</h3>
                         <p>The increase in targeted leads makes it easier to turn those leads into paying customers.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/004.png" alt="Brand Awareness"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/001.png')}}" alt="Brand Awareness"> </div>
                         <h3>More Brand Awareness</h3>
                         <p>Your brand can become the one your customers think of over all the competition in the industry.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/005.png" alt="Business Growth"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/002.png')}}" alt="Business Growth"> </div>
                         <h3>More Business Growth</h3>
                         <p>The new traffic, qualified leads, and brand awareness all contribute to new growth opportunities.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="assets/img/006.png" alt="Trust and Authority"> </div>
+                        <div class="icon"> <img src="{{asset('asset/img/003.png')}}" alt="Trust and Authority"> </div>
                         <h3>More Trust and Authority</h3>
                         <p>When you reach the top of the search results, your customers will see you as the industry authority.</p>
                     </div>
@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="video-image">
-                        <a href="https://www.youtube.com/watch?v=eYjlZlg1Ogo"><img src="assets/img/viral-video-2.jpg" alt="viral video"></a>
+                        <a href="https://www.youtube.com/watch?v=eYjlZlg1Ogo"><img src="{{asset('asset/img/viral-video-2.jpg')}}" alt="viral video"></a>
                     </div>
                 </div>
                 <div class="col-sm-6">

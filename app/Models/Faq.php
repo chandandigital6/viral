@@ -9,4 +9,9 @@ class Faq extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

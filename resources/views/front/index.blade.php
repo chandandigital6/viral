@@ -93,82 +93,30 @@
             </div>
             <!--  =========start-services======= -->
             <div class="row service-wrapper">
+                @foreach($services as $service)
+
+
                 <div class="col-md-4 text-center">
                     <div class="tw-service-box">
                         <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="103" src="{{asset('asset/img/Social Media Marketing.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Social Media Marketing"> </div>
+                            <div class="service-icon-inner d-table-cell"> <img width="100" height="103" src="{{asset('storage/'.$service->image)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Social Media Marketing"> </div>
                         </div>
                         <div class="service-content">
-                            <h3>Social Media Management</h3>
-                            <p>With the number of people increasing on Social Media every day, it is essential to advertise over there. Gather large chunks of audience with experts managing this aspect and delivering results. </p>
+                            <h3>{{$service->title}}</h3>
+                            <p>{!! $service->short_description !!} </p>
                             <div class="hovereffect"> <span>
-                  <a href="social-media-management.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a></span>
+                  <a href="{{route('serviceDetails',$service->id)}}" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="122" src="{{asset('asset/img/content-writing.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Content Writing"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Content Writing</h3>
-                            <p>Businesses and Start-Ups have started to realize the importance of relevant content. For that matter, Viral Business can help tremendously by offering help of experts. After all, Content is King.</p>
-                            <div class="hovereffect"> <span><a href="content-writing.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a></span> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="126" src="{{asset('asset/img/Search Engine Optimization.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Search Engine Optimization"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Search Engine Optimization</h3>
-                            <p>With the introduction of internet, local businesses have started to make their presence online. To stand out among them, it is vital to let an expert at Viral Business take care of the work.</p>
-                            <div class="hovereffect"> <span><a href="search-engine-optimization.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a></span> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="126" src="{{asset('asset/img/PPC Advertising.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="PPC Advertising"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>PPC Advertising</h3>
-                            <p>Websites have to unite to be beneficial for one another. Pay Per Click Advertising lets websites do exactly that by offering advertisement in return for money, which leads to more traffic.</p>
-                            <div class="hovereffect"> <span><a href="ppc-management.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i> </a></span> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="103" src="{{asset('asset/img/youTube-video-marketing0.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Youtube Video Marketing"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>YouTube Video Marketing</h3>
-                            <p>A person cannot build a website and then forget about it. To keep it running and getting the feedback about the performance, Google Analytics is a web service that must be used.</p>
-                            <div class="hovereffect"> <span><a href="youtube-video-marketing.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i> </a></span> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="tw-service-box">
-                        <div class="service-icon service-icon-bg d-table">
-                            <div class="service-icon-inner d-table-cell"> <img width="100" height="122" src="{{asset('asset/img/custom-website-design0.png')}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Custom Website Design"> </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Custom Website Design</h3>
-                            <p>Whether it is an online business or an offline business, it is essential for businesses to convert the visitors into customers to earn profits. Conversion Rate Optimization is exactly that.</p>
-                            <div class="hovereffect"> <span><a href="custom-website-design.html" class="tw-readmore">Read More <i class="fa fa-angle-right"></i> </a></span> </div>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+
+
                 <!-- ========end-Services======= -->
             </div>
+        </div>>
     </section>
     <!-- End Services Area -->
     <!-- Start What We Do Area -->
@@ -458,7 +406,7 @@
                             <a href="blog.html" class="d-block"> <img src="{{asset('storage/'.$blog->image)}}" alt="image"> </a>
                         </div>
                         <div class="content">
-                            <h3><a href="blog.html">{{$blog->title}}</a></h3>
+                            <h3><a href="{{route('blogCard')}}">{{$blog->title}}</a></h3>
                             <p>{{$blog->short_description}}</p>
                             <div class="d-flex align-items-center">
                                 <img src="{{asset('storage/'.$blog->user_image)}}" alt="image">
@@ -542,47 +490,39 @@
                     </div>
                 </div>
             </div>
+        </div>>
     </section>
     {{-- faq end--}}
     <section class="ourClients  ptb-100">
+        @foreach($logos as $logo)
+
+
         <div class="container">
             <div class="benifitsTitle clientSET">
-                <h2>Our Clients</h2>
-                <p class="pragrahTXT">We have been proudly partnering with more than 700 forward-thinking companies of all sizes, from startups to world-famous enterprises.</p>
+                <h2>{{$logo->title}}</h2>
+                <p class="pragrahTXT">{!! $logo->msg !!}</p>
             </div>
             <div class="row">
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo1.png')}}" alt="lo1"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo2.png')}}" alt="lo2"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo4.png')}}" alt="lo4"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo5.png')}}" alt="lo5"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo6.png')}}" alt="lo6"></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="clientPhotos">
-                        <a href="javascript:void(0)"><img src="{{asset('asset/img/lo7.png')}}" alt="lo7"></a>
-                    </div>
-                </div>
+                @if (is_string($logo->image) && !empty($logo->image))
+                    @php
+                        $imagePaths = explode(',', $logo->image);
+                    @endphp
+                    @foreach($imagePaths as $imagePath)
+                        <div class="col-lg-2">
+                            <div class="clientPhotos">
+                                <a href="javascript:void(0)"><img src="{{ asset('storage/'.$imagePath) }}" alt="lo1"></a>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+
+
+
+
+
             </div>
         </div>
+        @endforeach
     </section>
     <div class="clear"></div>
 @endsection

@@ -24,6 +24,8 @@ class FaqRequest extends FormRequest
         return [
             'question' => 'required|string|max:255',
             'answer' => 'required|string',
+            'type' => 'nullable|string|max:255',
+            'service_id' => 'required|exists:services,id'
         ];
     }
 }

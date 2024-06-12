@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('question')->nullable();
             $table->text('answer')->nullable();
+//            $table->string('type')->nullable();
+            $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->timestamps();
         });
     }

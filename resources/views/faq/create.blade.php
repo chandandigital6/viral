@@ -36,6 +36,17 @@
                                 <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="answer"></textarea>
 
                             </div>
+                            <div class="form-group">
+                                <label for="service_id">Service</label>
+                                <select name="service_id" class="form-control" id="service_id">
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}" {{ old('service_id') == $service->id ? 'selected' : '' }}>
+                                            {{ $service->category }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             {{--                            <div class="form-group">--}}
 
                             {{--                                <label for="category">Category</label>--}}

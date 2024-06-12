@@ -46,9 +46,9 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Category</th>
                                     <th>Title</th>
-                                    <th>Heading</th>
-                                    <th>service_icon</th>
+                                    <th>Short msg</th>
 {{--                                    <th>service_appointment_title</th>--}}
 {{--                                    <th>service_appointment_text</th>--}}
 {{--                                    <th>service_appointment_number</th>--}}
@@ -60,9 +60,9 @@
                                 @forelse ($serviceData as $service)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{$service->category}}</td>
                                         <td>{{ $service->title }}</td>
-                                        <td>{{$service->heading}}</td>
-                                        <td>{{$service->service_icon}}</td>
+                                        <td>{!! $service->short_description !!}</td>
 {{--                                        <td>{{$service->service_appointment_title}}</td>--}}
 {{--                                        <td>{{$service->service_appointment_text}}</td>--}}
 {{--                                        <td>{{$service->service_appointment_number}}</td>--}}

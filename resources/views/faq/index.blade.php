@@ -48,6 +48,7 @@
                                     <th>ID</th>
                                     <th>Question</th>
                                     <th>Answer</th>
+                                    <th>service category</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -58,6 +59,7 @@
                                         <td>{{ $faq->question }}</td>
 {{--                                        <td>{{$faq->heading}}</td>--}}
                                         <td>{!! $faq->answer !!}</td>
+                                        <td>{{$faq->service->category}}</td>
 {{--                                        <td><img src="{{ asset('storage/'.$faq->image) }}" alt="{{ $faq->title }}" style="max-width: 100px;"></td>--}}
                                         <td>
                                             <a href="{{ route('faq.edit', $faq->id) }}" class="btn btn-primary">Edit</a>

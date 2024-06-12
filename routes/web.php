@@ -8,14 +8,21 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChooseController;
+use App\Http\Controllers\ClientLogoController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\HomeProjectController;
+use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JoinTeamController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PlanCOntroller;
+use App\Http\Controllers\ServiceBenefitController;
+use App\Http\Controllers\ServiceContentController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceDetailsCOntroller;
+use App\Http\Controllers\ServiceVideoController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
@@ -45,7 +52,7 @@ Route::get('/menu',[HomeController::class,'menu'])->name('menu');
 Route::get('/joinUs',[HomeController::class,'joinUs'])->name('join-us');
 Route::get('/jobs',[HomeController::class,'jobs'])->name('jobs');
 Route::get('/blogCard',[HomeController::class,'blog'])->name('blogCard');
-Route::get('/blogDetails/{blog}',[HomeController::class,'blogDetails'])->name('blog-details');
+Route::get('/serviceDetails/{service}',[HomeController::class,'blogDetails'])->name('serviceDetails');
 
 //services
 
@@ -161,6 +168,74 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('service/duplicate/{service}',[ServiceController::class,'duplicate'])->name('service.duplicate');
 
 
+    //servicesDetails
+
+    Route::get('ServiceDetails/index',[ServiceDetailsCOntroller::class,'index'])->name('ServiceDetails.index');
+    Route::get('ServiceDetails/create',[ServiceDetailsCOntroller::class,'create'])->name('ServiceDetails.create');
+    Route::post('ServiceDetails/store',[ServiceDetailsCOntroller::class,'store'])->name('ServiceDetails.store');
+    Route::get('ServiceDetails/edit/{serviceDetails}',[ServiceDetailsCOntroller::class,'edit'])->name('ServiceDetails.edit');
+    Route::post('ServiceDetails/update/{serviceDetails}',[ServiceDetailsCOntroller::class,'update'])->name('ServiceDetails.update');
+    Route::get('ServiceDetails/delete/{serviceDetails}',[ServiceDetailsCOntroller::class,'delete'])->name('ServiceDetails.delete');
+    Route::get('ServiceDetails/duplicate/{serviceDetails}',[ServiceDetailsCOntroller::class,'duplicate'])->name('ServiceDetails.duplicate');
+
+
+    // benefits
+
+    Route::get('serviceBenefits/index',[ServiceBenefitController::class,'index'])->name('serviceBenefits.index');
+    Route::get('serviceBenefits/create',[ServiceBenefitController::class,'create'])->name('serviceBenefits.create');
+    Route::post('serviceBenefits/store',[ServiceBenefitController::class,'store'])->name('serviceBenefits.store');
+    Route::get('serviceBenefits/edit/{serviceBenefits}',[ServiceBenefitController::class,'edit'])->name('serviceBenefits.edit');
+    Route::post('serviceBenefits/update/{serviceBenefits}',[ServiceBenefitController::class,'update'])->name('serviceBenefits.update');
+    Route::get('serviceBenefits/delete/{serviceBenefits}',[ServiceBenefitController::class,'delete'])->name('serviceBenefits.delete');
+    Route::get('serviceBenefits/duplicate/{serviceBenefits}',[ServiceBenefitController::class,'duplicate'])->name('serviceBenefits.duplicate');
+
+
+    // ServiceContent
+
+    Route::get('serviceContent/index',[ServiceContentController::class,'index'])->name('serviceContent.index');
+    Route::get('serviceContent/create',[ServiceContentController::class,'create'])->name('serviceContent.create');
+    Route::post('serviceContent/store',[ServiceContentController::class,'store'])->name('serviceContent.store');
+    Route::get('serviceContent/edit/{serviceContent}',[ServiceContentController::class,'edit'])->name('serviceContent.edit');
+    Route::post('serviceContent/update/{serviceContent}',[ServiceContentController::class,'update'])->name('serviceContent.update');
+    Route::get('serviceContent/delete/{serviceContent}',[ServiceContentController::class,'delete'])->name('serviceContent.delete');
+    Route::get('serviceContent/duplicate/{serviceContent}',[ServiceContentController::class,'duplicate'])->name('serviceContent.duplicate');
+
+
+
+    // ServiceVideos
+
+    Route::get('serviceVideo/index',[ServiceVideoController::class,'index'])->name('serviceVideo.index');
+    Route::get('serviceVideo/create',[ServiceVideoController::class,'create'])->name('serviceVideo.create');
+    Route::post('serviceVideo/store',[ServiceVideoController::class,'store'])->name('serviceVideo.store');
+    Route::get('serviceVideo/edit/{serviceVideo}',[ServiceVideoController::class,'edit'])->name('serviceVideo.edit');
+    Route::post('serviceVideo/update/{serviceVideo}',[ServiceVideoController::class,'update'])->name('serviceVideo.update');
+    Route::get('serviceVideo/delete/{serviceVideo}',[ServiceVideoController::class,'delete'])->name('serviceVideo.delete');
+    Route::get('serviceVideo/duplicate/{serviceVideo}',[ServiceVideoController::class,'duplicate'])->name('serviceVideo.duplicate');
+
+
+    // home section
+
+    Route::get('homeContent/index',[HomeSectionController::class,'index'])->name('homeContent.index');
+    Route::get('homeContent/create',[HomeSectionController::class,'create'])->name('homeContent.create');
+    Route::post('homeContent/store',[HomeSectionController::class,'store'])->name('homeContent.store');
+    Route::get('homeContent/edit/{homeContent}',[HomeSectionController::class,'edit'])->name('homeContent.edit');
+    Route::post('homeContent/update/{homeContent}',[HomeSectionController::class,'update'])->name('homeContent.update');
+    Route::get('homeContent/delete/{homeContent}',[HomeSectionController::class,'delete'])->name('homeContent.delete');
+    Route::get('homeContent/duplicate/{homeContent}',[HomeSectionController::class,'duplicate'])->name('homeContent.duplicate');
+
+
+
+    // home section
+
+    Route::get('homeProject/index',[HomeProjectController::class,'index'])->name('homeProject.index');
+    Route::get('homeProject/create',[HomeProjectController::class,'create'])->name('homeProject.create');
+    Route::post('homeProject/store',[HomeProjectController::class,'store'])->name('homeProject.store');
+    Route::get('homeProject/edit/{homeProject}',[HomeProjectController::class,'edit'])->name('homeProject.edit');
+    Route::post('homeProject/update/{homeProject}',[HomeProjectController::class,'update'])->name('homeProject.update');
+    Route::get('homeProject/delete/{homeProject}',[HomeProjectController::class,'delete'])->name('homeProject.delete');
+    Route::get('homeProject/duplicate/{homeProject}',[HomeProjectController::class,'duplicate'])->name('homeProject.duplicate');
+
+
     // Plans
 
     Route::get('plan/index',[PlanCOntroller::class,'index'])->name('plan.index');
@@ -171,6 +246,15 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('plan/delete/{plan}',[PlanCOntroller::class,'delete'])->name('plan.delete');
     Route::get('plan/duplicate/{plan}',[PlanCOntroller::class,'duplicate'])->name('plan.duplicate');
 
+    // logo
+
+    Route::get('logo/index',[ClientLogoController::class,'index'])->name('logo.index');
+    Route::get('logo/create',[ClientLogoController::class,'create'])->name('logo.create');
+    Route::post('logo/store',[ClientLogoController::class,'store'])->name('logo.store');
+    Route::get('logo/edit/{logo}',[ClientLogoController::class,'edit'])->name('logo.edit');
+    Route::post('logo/update/{logo}',[ClientLogoController::class,'update'])->name('logo.update');
+    Route::get('logo/delete/{logo}',[ClientLogoController::class,'delete'])->name('logo.delete');
+    Route::get('logo/duplicate/{logo}',[ClientLogoController::class,'duplicate'])->name('logo.duplicate');
 
     //testimonial
 

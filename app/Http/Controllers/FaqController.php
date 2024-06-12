@@ -4,24 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FaqRequest;
 use App\Models\Faq;
+use App\Models\Service;
+use App\Models\ServiceBenefit;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
     public function index(Request $request){
         $keyword = $request->input('keyword');
-        $faq = Faq::query();
+        $faq = Faq::with('service');
 
         if (!empty($keyword)) {
             $faq->where('title', 'like', "%$keyword%");
         }
+
         $faqData = $faq->paginate(5);
 
         return view('faq.index',compact('faqData'));
     }
 
     public function create(){
-        return view('faq.create');
+        $services = Service::all();
+        return view('faq.create',compact('services'));
     }
 
     public function store(FaqRequest $request){
@@ -35,8 +39,8 @@ class FaqController extends Controller
     }
 
     public function edit(Faq $faq){
-
-        return view('faq.edit',compact('faq'));
+        $services = Service::all();
+        return view('faq.edit',compact('faq','services'));
     }
 
     public function update(Faq $faq , FaqRequest $request){

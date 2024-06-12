@@ -42,6 +42,13 @@
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
     <link rel="icon" type="image/png" href="{{asset('asset/img/viral-fav.png')}}">
+{{--    <style>--}}
+{{--        .nav-link:hover, .dropdown-item:hover {--}}
+{{--            background-color: red !important;--}}
+{{--            color: white !important;--}}
+{{--        }--}}
+
+{{--    </style>--}}
 </head>
 <body>
 

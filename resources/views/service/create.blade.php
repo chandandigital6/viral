@@ -15,6 +15,15 @@
 
         <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            <div class="form-group">
+                <label for="heading">category</label>
+                <input type="text" name="category" class="form-control" id="category" value="{{ old('category') }}">
+                @error('category')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" id="title" value="{{ old('title') }}" required>
@@ -22,15 +31,6 @@
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
-
-            <div class="form-group">
-                <label for="heading">Heading</label>
-                <input type="text" name="heading" class="form-control" id="heading" value="{{ old('heading') }}">
-                @error('heading')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-
             <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" name="image" class="form-control-file" id="image">
@@ -40,9 +40,11 @@
             </div>
 
             <div class="form-group">
-                <label for="service_title">Service icon</label>
-                <input type="text" name="service_icon" class="form-control" id="service_title" value="{{ old('service_icon') }}">
-                @error('service_icon')
+                <label for="short_description">short_description</label>
+                <textarea id="short_description" name="short_description" class="form-control textarea">{{ old('short_description') }}</textarea>
+
+{{--                <input type="text" name="short_description" class="form-control" id="short_description" value="{{ old('short_description') }}">--}}
+                @error('short_description')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
