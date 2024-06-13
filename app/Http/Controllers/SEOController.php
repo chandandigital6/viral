@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SeoRequest;
 use App\Models\SEO;
 use Illuminate\Http\Request;
 
@@ -16,13 +17,13 @@ class SEOController extends Controller
         return view('seo.create');
     }
 
-    public function store(Request $request){
-        $request->validate([
-            'name' => '',
-            'property' => '',
-            'content' => 'required',
-            'page' => 'required',
-        ]);
+    public function store(SeoRequest $request){
+//        $request->validate([
+//            'name' => '',
+//            'property' => '',
+//            'content' => 'required',
+//            'page' => 'required',
+//        ]);
 
         SEO::create($request->all());
         return redirect('seo')->with('success', 'SEO created successfully');
@@ -32,13 +33,13 @@ class SEOController extends Controller
         return view('seo.edit', compact('seo'));
     }
 
-    public function update(Request $request, SEO $seo){
-        $request->validate([
-            'name' => '',
-            'property' => '',
-            'content' => 'required',
-            'page' => 'required',
-        ]);
+    public function update(SeoRequest $request, SEO $seo){
+//        $request->validate([
+//            'name' => '',
+//            'property' => '',
+//            'content' => 'required',
+//            'page' => 'required',
+//        ]);
 
         $seo->update($request->all());
         return redirect('seo')->with('success', 'SEO Update successfully');
