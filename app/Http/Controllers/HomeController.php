@@ -133,8 +133,12 @@ class HomeController extends Controller
     }
 
     public function search_engine_optimization(){
+
         $seos = SEO::where('page', 'search-engine-optimization')->get();
-        return view('front.search-engine-optimization',compact('seos'));
+//        dd($seos);
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+//        dd($services);
+        return view('front.search-engine-optimization',compact('seos','services'));
     }
 
     public function local_seo(){

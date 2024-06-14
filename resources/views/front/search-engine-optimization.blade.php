@@ -9,7 +9,7 @@
     <section class="page-title-area page-title-style-two">
         <div class="container">
             <div class="page-title-content">
-                <h1>Search Engine Optimization</h1> </div>
+                <h1>{{$services->category}}</h1> </div>
         </div>
         <div class="shape2"><img src="{{asset('asset/img/shape/shape2.png')}}" alt="shape2"></div>
         <div class="shape3"><img src="{{asset('asset/img/shape/shape3.png')}}" alt="shape3"></div>
@@ -28,76 +28,68 @@
     <!-- Start SEO Analysis Area -->
     <section class="row service-about5 bottomspace">
         <div class="container">
+            @foreach($services->details as $details)
             <div class="row">
-                <div class="col-md-6 col-md-push-6 img-holder"> <img src="{{asset('asset/img/seo00.png')}}" alt="SEO"> </div>
+                <div class="col-md-6 col-md-push-6 img-holder"> <img src="{{asset('storage/'.$details->image)}}" alt="SEO"> </div>
                 <div class="col-md-6 col-md-pull-6 text-holder">
                     <div class="row sectionTitle text-left">
-                        <h2 class="this-title">Boost your website’s ranking with Professional SEO Services</h2>
-                        <p>We are Search Engine &amp; Social Media Experts</p>
+                        <h2 class="this-title">{{$details->title}}</h2>
+{{--                        <p>We are Search Engine &amp; Social Media Experts</p>--}}
                     </div>
-                    <p class="this-p">We’re also experts at finding the sweet spot between Google’s guidelines and what is commercially right for you. We have progressive theories on search as a tool for retention of customers, not just for acquisition.</p>
+                    <p class="this-p">
+                    {!! $details->description !!}
+                    </p>
                     <ul class="this-features list-unstyled">
-                        <li><span class="icon-holder"><img src="{{asset('asset/img/26.png')}}" alt="Perfect Design"></span>Perfect Design</li>
-                        <li><span class="icon-holder"><img src="{{asset('asset/img/27.png')}}" alt="Fully Responsive"></span>Fully Responsive</li>
-                        <li><span class="icon-holder"><img src="{{asset('asset/img/28.png')}}" alt="Fast Loading"></span>Fast Loading</li>
-                        <li><span class="icon-holder"><img src="{{asset('asset/img/29.png')}}" alt="Seo Friendly"></span>Seo Friendly</li>
+                        @if($details->f1_msg)
+                            <li><span class="icon-holder"><img src="{{asset('storage/'.$details->f1_image)}}" alt="Perfect Design"></span>{{$details->f1_msg}}</li>
+                        @endif
+                        @if($details->f2_msg)
+                            <li><span class="icon-holder"><img src="{{asset('storage/'.$details->f2_image)}}" alt="Perfect Design"></span>{{$details->f2_msg}}</li>
+                        @endif
+                        @if($details->f3_msg)
+                            <li><span class="icon-holder"><img src="{{asset('storage/'.$details->f3_image)}}" alt="Perfect Design"></span>{{$details->f3_msg}}</li>
+                        @endif
+                        @if($details->f4_msg)
+                            <li><span class="icon-holder"><img src="{{asset('storage/'.$details->f4_image)}}" alt="Perfect Design"></span>{{$details->f4_msg}}</li>
+                        @endif
+                        @if($details->f5_msg)
+                            <li><span class="icon-holder"><img src="{{asset('storage/'.$details->f5_image)}}" alt="Perfect Design"></span>{{$details->f5_msg}}</li>
+                        @endif
                     </ul>
                 </div>
             </div>
+            @endforeach
         </div>
     </section>
     <!-- Start Services Area -->
     <section class="services-area bg-f9f9f9 topspace pb-70">
+
+
+
         <div class="container">
-            <div class="section-title"> <span class="sub-title">GOOD SEO IS THE ONE THAT IS CONSISTENT AND HAS A LONG TERM STRATEGY.</span>
-                <h2>Search Engine Optimization</h2>
-                <p>Now you may ask, what does SEO even mean? Search Engine Optimization is referred to as SEO. Its meaning can be easily guessed from the name itself.</p>
+            @foreach($services->details as $details)
+            <div class="section-title"> <span class="sub-title">{{$details->title_1}}</span>
+                <h2>{{$details->heading}}</h2>
+                <p>
+                  {{$details->short_description}}
+                </p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/004.png')}}" alt="Traffic"> </div>
-                        <h3>More Traffic</h3>
-                        <p>As you gain more visibility, you will start to see an increase in the number of website visitors.</p>
-                    </div>
+            @endforeach
+                <div class="row">
+                    @foreach($services->benefits as $serviceBenefit)
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-services-box">
+                                <div class="icon"> <img src="{{asset('storage/'.$serviceBenefit->image)}}" alt="Traffic"> </div>
+                                <h3>{{$serviceBenefit->title}}</h3>
+                                <p>{{$serviceBenefit->msg}}</p>
+                            </div>
+                        </div>
+
+                    @endforeach
+
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/005.png')}}" alt="Leads"> </div>
-                        <h3>More Leads</h3>
-                        <p>We can target the audience that is most likely to be interested in your products and services.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/006.png')}}" alt="Revenue"> </div>
-                        <h3>More Revenue</h3>
-                        <p>The increase in targeted leads makes it easier to turn those leads into paying customers.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/001.png')}}" alt="Brand Awareness"> </div>
-                        <h3>More Brand Awareness</h3>
-                        <p>Your brand can become the one your customers think of over all the competition in the industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/002.png')}}" alt="Business Growth"> </div>
-                        <h3>More Business Growth</h3>
-                        <p>The new traffic, qualified leads, and brand awareness all contribute to new growth opportunities.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/003.png')}}" alt="Trust and Authority"> </div>
-                        <h3>More Trust and Authority</h3>
-                        <p>When you reach the top of the search results, your customers will see you as the industry authority.</p>
-                    </div>
-                </div>
-            </div>
         </div>
+
     </section>
     <section class="tabbed-set">
         <div class="container">

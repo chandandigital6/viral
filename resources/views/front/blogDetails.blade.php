@@ -71,8 +71,8 @@
                 @foreach($serviceBenefits as $serviceBenefit)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-services-box">
-                        <div class="icon"> <img src="{{asset('asset/img/004.png')}}" alt="Traffic"> </div>
-                        <h3>More Traffic</h3>
+                        <div class="icon"> <img src="{{asset('storage/'.$serviceBenefit->image)}}" alt="Traffic"> </div>
+                        <h3>{{$serviceBenefit->title}}</h3>
                         <p>As you gain more visibility, you will start to see an increase in the number of website visitors.</p>
                     </div>
                 </div>

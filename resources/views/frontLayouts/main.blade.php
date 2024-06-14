@@ -6,27 +6,27 @@
     <title>@yield('title','SEO Services, Digital Marketing Agency That Drives ROI')</title>
 {{--    <meta charset="utf-8">--}}
 {{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
-{{--    <meta name="description" content="Viral Business is a reliable digital marketing agency. We offer SEO, Website development, Content marketing & Social media services and much more at affordable prices.">--}}
+    <meta name="description" content="{{ $seos->first()->description ?? 'Default Description' }}">
+    <link rel="canonical" href="{{ $seos->first()->canonical ?? url()->current() }}">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $seos->first()->og_title ?? 'Default OG Title' }}">
+    <meta property="og:description" content="{{ $seos->first()->og_description ?? 'Default OG Description' }}">
+    <meta property="og:type" content="{{ $seos->first()->og_type ?? 'website' }}">
+    <meta property="og:url" content="{{ $seos->first()->og_url ?? url()->current() }}">
+    <meta property="og:image" content="{{ $seos->first()->og_image ?? asset('default-image.jpg') }}">
+    <meta property="og:site_name" content="{{ $seos->first()->og_site_name ?? 'Default Site Name' }}">
+    <meta property="og:locale" content="{{ $seos->first()->og_locale ?? 'en_US' }}">
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $seos->first()->og_title ?? 'Default Twitter Title' }}">
+    <meta name="twitter:description" content="{{ $seos->first()->og_description ?? 'Default Twitter Description' }}">
+    <meta name="twitter:image" content="{{ $seos->first()->og_image ?? asset('default-image.jpg') }}">
 
-    <link rel="canonical" href="https://viralbusinessgroup.com">
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="SEO Services, Digital Marketing Agency That Drives ROI" />
-    <meta property="og:description" content="Viral Business is a reliable digital marketing agency. We offer SEO, Website development, Content marketing & Social media services and much more at affordable prices." />
-    <meta property="og:url" content="https://viralbusinessgroup.com/" />
-    <meta property="og:site_name" content="Viral Business" />
-    <meta property="article:publisher" content="https://www.facebook.com/viralbusinessin" />
-    <meta property="og:image" content="https://viralbusinessgroup.com/assets/img/logo.png" />
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Ankush Goyal">
-    <meta name="twitter:label2" content="Est. reading time">
-    <meta name="twitter:data2" content="12 minutes">
+{{--    @foreach($seos as $seo)--}}
 
-    @foreach($seos as $seo)
-
-        <meta name="{{$seo->name}}" property="{{$seo->property}}" content="{{$seo->content}}">
-    @endforeach
-    <!-- Required meta tags -->
+{{--        <meta name="{{$seo->name}}" property="{{$seo->property}}" content="{{$seo->content}}">--}}
+{{--    @endforeach--}}
+{{--    <!-- Required meta tags -->--}}
 
     <!-- Links of CSS files -->
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
