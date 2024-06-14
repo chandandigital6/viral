@@ -45,7 +45,7 @@ class ServiceBenefitController extends Controller
         return view('serviceBenefit.edit',compact('serviceBenefits','services'));
     }
 
-    public function update(ServiceBenefit $serviceBenefit , ServiceBenefitsRequest $request){
+    public function update(ServiceBenefit $serviceBenefits , ServiceBenefitsRequest $request){
 //        dd($request);
         $serviceBenefitData = $request->all();
 
@@ -54,7 +54,7 @@ class ServiceBenefitController extends Controller
             $serviceBenefitData['image'] = str_replace('public/', '', $imagePath);
         }
 
-        $serviceBenefit->update($serviceBenefitData);
+        $serviceBenefits->update($serviceBenefitData);
 
         return redirect()->route('serviceBenefits.index')->with('success', 'serviceBenefit item successfully updated');
     }

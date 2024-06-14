@@ -16,6 +16,10 @@
                         <li><a href="{{route('jobs')}}">Jobs</a></li>
                     </ul>
                 </li>
+{{--                @php--}}
+{{--                    $serviceMenu=\App\Models\Service::all();--}}
+{{--                    dd($serviceMenu);--}}
+{{--                @endphp--}}
                 <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Services <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{route('search-engine-optimization')}}">Search Engine Optimization</a></li>

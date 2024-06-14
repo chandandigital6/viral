@@ -30,7 +30,7 @@
 
     <!-- Links of CSS files -->
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/flaticon.css.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/animate.min.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{asset('asset/css/boxicons.min.css')}}">

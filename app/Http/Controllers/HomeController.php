@@ -67,7 +67,7 @@ class HomeController extends Controller
 
       public function team(){
           $teams=Team::all();
-          $seos = SEO::where('page', 'team')->get();
+          $seos = SEO::where('page', 'meet-talent')->get();
           return view('front.team',compact('seos', 'teams'));
       }
       public function testimonial(){
@@ -105,18 +105,7 @@ class HomeController extends Controller
         $seos = SEO::where('page', 'menu')->get();
         return view('front.menu',compact('categories', 'seos'));
     }
-//    public function joinUs(){
-//
-//        $seos = SEO::where('page', 'join-us')->get();
-//        return view('front.joinUs', compact('seos'));
-//    }
 
-//    public function jobs(){
-//        $seos = SEO::where('page', 'jobs')->get();
-//        return view('front.jobs', compact('seos'));
-//
-//
-//    }
 
     public function joinUs(){
         $joins=join::all();
@@ -133,44 +122,59 @@ class HomeController extends Controller
     }
 
     public function search_engine_optimization(){
-
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'search-engine-optimization')->get();
 //        dd($seos);
         $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
 //        dd($services);
-        return view('front.search-engine-optimization',compact('seos','services'));
+        return view('front.search-engine-optimization',compact('seos','services','categories'));
     }
 
     public function local_seo(){
+        $services=Service::where('category','local_seo')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
-        return view('front.local-seo',compact('seos'));
+        return view('front.local-seo',compact('seos','services','categories'));
 
     }
     public function ppc(){
-        $seos = SEO::where('page', 'local-seo')->get();
-        return view('front.ppc',compact('seos'));
+        $categories = Category::with('menus')->get();
+        $seos = SEO::where('page', 'search-engine-optimization')->get();
+//        dd($seos);
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+//        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.ppc',compact('seos','services','categories'));
 
     }
 
     public function Conversion_Rate_Optimization(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
+
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.conversion_rate',compact('seos'));
 
     }
 
     public function social_media_marketing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.social_media_marketing',compact('seos'));
 
     }
 
     public function social_brand_marketing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.social_brand_marketing',compact('seos'));
 
     }
 
     public function online_reputation_management(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.online_reputation_management',compact('seos'));
 
@@ -178,6 +182,8 @@ class HomeController extends Controller
 
 
     public function Social_Media_Paid_Advertising(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.Social_Media_Paid_Advertising',compact('seos'));
 
@@ -185,30 +191,40 @@ class HomeController extends Controller
 
 
     public function custom_website(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.custom_website',compact('seos'));
 
     }
 
     public function content_writing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.content_writing',compact('seos'));
 
     }
 
     public function content_marketing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.content_marketing',compact('seos'));
 
     }
 
     public function email_marketing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.email_marketing',compact('seos'));
 
     }
 
     public function youTube_marketing(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.youTube_marketing',compact('seos'));
 
@@ -216,12 +232,16 @@ class HomeController extends Controller
 
 
     public function youTube_Monetization(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.youTube_Monetization',compact('seos'));
 
     }
 
     public function video_production(){
+        $services=Service::where('category','marketing')->with('details','benefits','faqs','content','video')->firstOrFail();
+        $categories = Category::with('menus')->get();
         $seos = SEO::where('page', 'local-seo')->get();
         return view('front.video_production',compact('seos'));
 
