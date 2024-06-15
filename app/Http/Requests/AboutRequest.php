@@ -37,6 +37,15 @@ class AboutRequest extends FormRequest
             'founded_data_office_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'international_award' => 'nullable|string',
             'international_award_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'i_data_date'=>'nullable',
+            'i_data_title'=>'nullable',
+            'f_date_date'=>'nullable',
+            'f_data_title'=>'nullable',
+            'g_date'=>'nullable',
+            'g_title'=>'nullable',
+            'founded_date'=>'nullable',
+            'founded_title'=>'nullable',
+
         ];
     }
 }

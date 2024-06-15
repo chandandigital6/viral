@@ -133,11 +133,15 @@
 
                     <div class="timeline-date">
 
-                        <span>2010</span>
+{{--                        <span>2010</span>--}}
 
-                        February 20
+{{--                        February 20--}}
 
-                        <sup>th</sup>
+{{--                        {{ $boutHistory->founded_date->formate('Y-m-d') }}--}}
+                        {{ \Carbon\Carbon::parse($boutHistory->founded_date)->format('F j, Y') }}
+
+
+                        {{--                        <sup>th</sup>--}}
 
                     </div>
 
@@ -159,7 +163,7 @@
 
                                 <div class="content">
 
-                                    <h3>Founded</h3>
+                                    <h3>{{$boutHistory->founded_title}}</h3>
 
                                     <p>{!! $boutHistory->founded !!} </p>
 
@@ -191,11 +195,11 @@
 
                     <div class="timeline-date">
 
-                        <span>2013</span>
+{{--                        <span>2013</span>--}}
 
-                        January 14
-
-                        <sup>th</sup>
+{{--                        January 14--}}
+                        {{ \Carbon\Carbon::parse($boutHistory->g_date)->format('F j, Y') }}
+{{--                        <sup>th</sup>--}}
 
                     </div>
 
@@ -217,7 +221,7 @@
 
                                 <div class="content">
 
-                                    <h3>Global Success</h3>
+                                    <h3>{{$boutHistory->g_title}}</h3>
 
                                     <p>
                                         {!! $boutHistory->g_success !!}
@@ -252,11 +256,11 @@
 
                     <div class="timeline-date">
 
-                        <span>2016</span>
+{{--                        <span>2016</span>--}}
+                        {{ \Carbon\Carbon::parse($boutHistory->f_date_date)->format('F j, Y') }}
+{{--                        March 25--}}
 
-                        March 25
-
-                        <sup>th</sup>
+{{--                        <sup>th</sup>--}}
 
                     </div>
 
@@ -278,7 +282,7 @@
 
                                 <div class="content">
 
-                                    <h3>Founded Data Office</h3>
+                                    <h3>{{$boutHistory->f_data_title}}</h3>
 
                                     <p>{!! $boutHistory->founded_data_office !!}</p>
 
@@ -310,11 +314,12 @@
 
                     <div class="timeline-date">
 
-                        <span>2020</span>
+{{--                        <span>2020</span>--}}
 
-                        December 10
+{{--                        December 10--}}
 
-                        <sup>th</sup>
+{{--                        <sup>th</sup>--}}
+                        {{ \Carbon\Carbon::parse($boutHistory->i_data_date)->format('F j, Y') }}
 
                     </div>
 
@@ -336,7 +341,7 @@
 
                                 <div class="content">
 
-                                    <h3>International Award</h3>
+                                    <h3>{{$boutHistory->i_data_title}}</h3>
 
                                     <p>{!! $boutHistory->international_award !!}</p>
 

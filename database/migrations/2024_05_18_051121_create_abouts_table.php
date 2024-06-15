@@ -27,7 +27,16 @@ return new class extends Migration
             $table->text('founded_data_office')->nullable();
             $table->string('founded_data_office_image')->nullable();
             $table->text('international_award')->nullable();
-            $table->string('international_award_image')->nullable();
+            $table->string('i_data_date')->nullable();
+            $table->string('i_data_title')->nullable();
+            $table->string('f_date_date')->nullable();
+            $table->string('f_data_title')->nullable();
+            $table->string('g_date')->nullable();
+            $table->string('g_title')->nullable();
+            $table->string('founded_date')->nullable();
+            $table->string('founded_title')->nullable();
+
+
             $table->timestamps();
         });
     }
