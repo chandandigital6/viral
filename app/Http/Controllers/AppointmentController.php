@@ -27,7 +27,7 @@ class AppointmentController extends Controller
 //    }
 
     public function store(AppointmentRequest $request){
-//        dd($request);
+//        dd($request->all());
         $appointment=Appointment::create($request->all());
         if($appointment){
             Mail::to($request->email)->send(new AppointmentCreated($appointment));

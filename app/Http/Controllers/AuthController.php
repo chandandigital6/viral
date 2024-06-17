@@ -213,14 +213,16 @@ class AuthController extends Controller
 
 
     public function reset_password(Request $request) {
+//        dd($request->all());
         if (!isset($request->token)) {
             return response("Page expired", 400);
         }
 
         $resetData = PasswordReset::where('token', $request->token)->first();
+//        dd($resetData);
         if ($resetData) {
             $user = User::where('email', $resetData->email)->first();
-
+//    dd($user);
             if ($user) {
                 return view('auth.reset_passwordView', ['user' => $user]);
             } else {
@@ -232,6 +234,7 @@ class AuthController extends Controller
     }
 
     public function store_password(Request $request) {
+//        dd($request->all());
         $request->validate([
             'password' => 'required|confirmed|string|min:6',
             'id' => 'required|integer'
@@ -242,7 +245,7 @@ class AuthController extends Controller
 
         // Find the user by ID
         $user = User::find($request->id);
-   dd($user);
+//   dd($user);
         if (!$user) {
             return redirect()->back()->with('error', 'User not found');
         }

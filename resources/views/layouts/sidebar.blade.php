@@ -61,16 +61,35 @@
                         <a href="{{ route('choose.index') }}" class="dropdown-item text-dark">Choose Us</a>
                     </div>
                 </li>
-
                 <li class="nav-item">
-                     <a href="{{route('appointment.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                    <a href="{{route('team.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-group"></i>
                         <p>
-                            Appointment
+                            Team Member
                         </p>
                     </a>
                 </li>
 
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nav-icon fa fa-address-book"></i>
+                        <p>Join page</p>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a href="{{ route('joins.index') }}" class="dropdown-item text-dark">Join Us</a>
+                        <a href="{{ route('plan.index') }}" class="dropdown-item text-dark">JoinUS Benefits</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('jobs.index')}}" class="nav-link">
+                        <i class="nav-icon 	fa fa-anchor"></i>
+                        <p>
+                            Jobs
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="nav-icon fa fa-bullseye"></i>
@@ -95,35 +114,18 @@
                         </p>
                     </a>
                 </li>
+
+
                 <li class="nav-item">
-                     <a href="{{route('team.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-group"></i>
+                    <a href="{{route('appointment.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
                         <p>
-                            Team Member
+                            Appointment
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="nav-icon fa fa-address-book"></i>
-                        <p>Join page</p>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <a href="{{ route('joins.index') }}" class="dropdown-item text-dark">Join Us</a>
-                        <a href="{{ route('plan.index') }}" class="dropdown-item text-dark">JoinUS Benefits</a>
-                    </div>
-                </li>
 
-
-                <li class="nav-item">
-                    <a href="{{route('jobs.index')}}" class="nav-link">
-                        <i class="nav-icon 	fa fa-anchor"></i>
-                        <p>
-                          Jobs
-                        </p>
-                    </a>
-                </li>
                 <li class="nav-item">
                      <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>

@@ -35,7 +35,7 @@
                                 <p>We’re a Digital Marketing Agency, known for our no-nonsense approach. Just straight talking and smart thinking, delivered by people who care about your business.</p>
                             </div>
                             <div class="btn-box">
-                                <a href="contact-us.html" target="_blank" class="default-btn bttn-G">Contact Us</a>
+                                <a href="{{route('contact')}}" target="_blank" class="default-btn bttn-G">Contact Us</a>
                                 <a href="tel:+91-98766-66605" class="default-btn2 bttn-D">Request a Call</a>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                 <p>These are the categories that we have expertise in. We constantly add more services to our arsenal.</p>
             </div>
             <div class="row service-wrapper">
-                @foreach($services as $service)
+                @foreach($services->take(6) as $service)
                     <div class="col-md-4 text-center">
                         <div class="tw-service-box">
                             <div class="service-icon service-icon-bg d-table">

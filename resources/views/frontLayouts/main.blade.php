@@ -61,7 +61,7 @@
 <!-- End Top Mobile Area -->
 @include('frontLayouts.header')
 <!-- End Navbar Area -->
-{{--<!-- Sidebar Modal -->--}}
+<!-- Sidebar Modal -->
 {{--<div class="sidebarModal modal right fade" id="sidebarModal" tabindex="-1" role="dialog">--}}
 {{--    <div class="modal-dialog" role="document">--}}
 {{--        <div class="modal-content">--}}
@@ -145,25 +145,25 @@
 {{--</div>--}}
 {{--<!-- End Search Overlay -->--}}
 
-{{--<div class="newsletter-overlay">--}}
-{{--    <div id="newsletter-popup"> <a href="#" class="popup-close">X</a>--}}
-{{--        <div class="newsletter-in">--}}
-{{--            <h3>Unlock 3X More Customers</h3>--}}
-{{--            <p>Elevate Your Business with Tailored Online Marketing Solutions</p>--}}
-{{--            <form  class="validate" method="post" action="#">--}}
-{{--                <div class="frm-row">--}}
-{{--                    <input class="frm-name" type="text" placeholder="Your Name" name="name" required=""> </div>--}}
-{{--                <div class="frm-row">--}}
-{{--                    <input class="frm-email" type="text" placeholder="Your Phone Number" name="phone" required=""> </div>--}}
-{{--                <div class="frm-row">--}}
-{{--                    <input class="frm-business" type="text" placeholder="Business Name" name="business" required=""> </div>--}}
-{{--                <div class="frm-submit">--}}
-{{--                    <input type="submit" name="submit" value="Submit"> </div>--}}
-{{--            </form>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<!-- home-popup-html=============== -->--}}
+<div class="newsletter-overlay">
+    <div id="newsletter-popup"> <a href="#" class="popup-close">X</a>
+        <div class="newsletter-in">
+            <h3>Unlock 3X More Customers</h3>
+            <p>Elevate Your Business with Tailored Online Marketing Solutions</p>
+            <form  class="validate" method="post" action="#">
+                <div class="frm-row">
+                    <input class="frm-name" type="text" placeholder="Your Name" name="name" required=""> </div>
+                <div class="frm-row">
+                    <input class="frm-email" type="text" placeholder="Your Phone Number" name="phone" required=""> </div>
+                <div class="frm-row">
+                    <input class="frm-business" type="text" placeholder="Business Name" name="business" required=""> </div>
+                <div class="frm-submit">
+                    <input type="submit" name="submit" value="Submit"> </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- home-popup-html=============== -->
 
 @yield('content')
 

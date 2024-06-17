@@ -66,43 +66,78 @@
                 <h2>Ready to Get Started?<span class="overlay"></span></h2>
                 <p>Your email address will not be published. Required fields are marked *</p>
             </div>
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @if($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="contact-form">
-                        <form id="contactForm1" method="post" action="#">
+                        <form  action="{{ route('appointment.store') }}" method="post">
+                            @csrf
                             <div class="row">
-                                <div class="col-lg-12 col-md-6">
+                                <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" id="name1" required data-error="Please enter your name" placeholder="Your name">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name1" required placeholder="Your name" value="{{ old('name') }}">
+                                        @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-6">
+                                <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="email1" required data-error="Please enter your email" placeholder="Your email address">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email1" required placeholder="Your email address" value="{{ old('email') }}">
+                                        @error('email')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="mobile" class="form-control" id="phone_number1" required data-error="Please enter your phone number" placeholder="Your phone number">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="text" name="number" class="form-control @error('number ') is-invalid @enderror" id="phone_number1" required placeholder="Your phone number" value="{{ old('number ') }}">
+                                        @error('number  ')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <textarea name="comment" id="message1" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="Write your message..."></textarea>
-                                        <div class="help-block with-errors"></div>
+                                        <textarea name="msg" id="message1" class="form-control @error('msg') is-invalid @enderror" cols="30" rows="6" required placeholder="Write your message...">{{ old('msg') }}</textarea>
+                                        @error('msg')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-
                                 <div class="col-lg-12 col-md-12">
                                     <button type="submit" class="default-btn" name="submit">Send Message</button>
-
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
-
                             </div>
                         </form>
                         <!--
