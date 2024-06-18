@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('twitter_label2')->nullable();
             $table->string('twitter_data2')->nullable();
             $table->string('type')->nullable();
+            $table->text('schema_js')->nullable();
             $table->timestamps();
         });
     }

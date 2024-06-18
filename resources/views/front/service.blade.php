@@ -2,200 +2,61 @@
 @section('title', 'Services')
 @section('content')
 
-
-    <!-- Page Header Start -->
-    <div class="page-header">
+    <!-- Start Page Title Area -->
+    <section class="page-title-area page-title-style-two">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Our Service</h2>
-                </div>
-                <div class="col-12">
-                    <a href="{{route('home')}}">Home</a>
-                    <a href="{{route('services')}}">Service </a>
-                </div>
-            </div>
+            <div class="page-title-content">
+                <h1>Our Services</h1> </div>
         </div>
-    </div>
-    <!-- Page Header End -->
+        <div class="shape2"><img src="{{asset('asset/img/shape/shape2.png')}}" alt="shape2"></div>
+        <div class="shape3"><img src="{{asset('asset/img/shape/shape3.png')}}" alt="shape3"></div>
+        <div class="shape5"><img src="{{asset('asset/img/shape/shape5.png')}}" alt="shape5"></div>
+        <div class="shape6"><img src="{{asset('asset/img/shape/shape6.png')}}" alt="shape6"></div>
+        <div class="shape7"><img src="{{asset('asset/img/shape/shape7.png')}}" alt="shape7"></div>
+        <div class="shape8"><img src="{{asset('asset/img/shape/shape8.png')}}" alt="shape8"></div>
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </section>
+    <!-- End Page Title Area -->
 
 
-    <!-- Service Start -->
-    <div class="service">
+
+    <!-- Start Services Area -->
+    <section class="services-area bg-f9f9f9 pt-100 pb-70">
         <div class="container">
-            <div class="section-header text-center">
-                <p>Our Services</p>
-                <h2>We Provide Services</h2>
+            <div class="section-title">
+                <span class="sub-title">Services</span>
+                <h2>What We Offer?</h2>
+                <p>These are the categories that we have expertise in. We constantly add more services to our arsenal.</p>
             </div>
-            <div class="row">
-                @foreach($services as $index=> $service)
-
-
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{$index * 0.5}}s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="{{asset('storage/'.$service->image)}}" alt="Image">
-                                <div class="service-overlay">
-                                    <p>
-                                        {{$service->title}}
-                                    </p>
+            <div class="row service-wrapper">
+                @foreach($services as $service)
+                    <div class="col-md-4 text-center">
+                        <div class="tw-service-box">
+                            <div class="service-icon service-icon-bg d-table">
+                                <div class="service-icon-inner d-table-cell">
+                                    <img width="100" height="103" src="{{ asset('storage/' . $service->image) }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="{{ $service->title }}">
                                 </div>
                             </div>
-                            <div class="service-text">
-                                <h3>{{$service->heading}}</h3>
-                                <a class="btn" href="{{asset('storage/'.$service->image)}}" data-lightbox="service">+</a>
+                            <div class="service-content">
+                                <h3>{{ $service->title }}</h3>
+                                <p>{!! $service->short_description !!}</p>
+                                <div class="hovereffect">
+                                    <span>
+                                        <a href="{{ route('serviceDetails', $service->id) }}" class="tw-readmore">Read More <i class="fa fa-angle-right"></i></a>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-
-
             </div>
         </div>
-    </div>
-    <!-- Service End -->
+    </section>
+    <!-- End Services Area -->
 
-
-    <!-- FAQs Start -->
-    <div class="faqs">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>Frequently Asked Question</p>
-                <h2>You May Ask</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="accordion-1">
-                        <div class="card wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="collapse" data-parent="#accordion-1">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInLeft" data-wow-delay="0.2s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="collapse" data-parent="#accordion-1">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInLeft" data-wow-delay="0.3s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="collapse" data-parent="#accordion-1">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInLeft" data-wow-delay="0.4s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseFour">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseFour" class="collapse" data-parent="#accordion-1">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInLeft" data-wow-delay="0.5s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseFive">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseFive" class="collapse" data-parent="#accordion-1">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div id="accordion-2">
-                        <div class="card wow fadeInRight" data-wow-delay="0.1s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseSix" class="collapse" data-parent="#accordion-2">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInRight" data-wow-delay="0.2s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseEight" class="collapse" data-parent="#accordion-2">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInRight" data-wow-delay="0.4s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseNine" class="collapse" data-parent="#accordion-2">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInRight" data-wow-delay="0.5s">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                    Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseTen" class="collapse" data-parent="#accordion-2">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FAQs End -->
 
 @endsection

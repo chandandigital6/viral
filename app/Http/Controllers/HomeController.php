@@ -246,4 +246,11 @@ class HomeController extends Controller
         return view('front.video_production',compact('seos'));
 
     }
+
+
+    public function portfolio(){
+        $seos = SEO::where('page', 'local-seo')->get();
+        return view('front.portfolio',compact('seos'));
+    }
+
 }

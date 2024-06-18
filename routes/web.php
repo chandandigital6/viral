@@ -55,6 +55,7 @@ Route::get('/blogCard',[HomeController::class,'blog'])->name('blogCard');
 Route::get('/serviceDetails/{service}',[HomeController::class,'blogDetails'])->name('serviceDetails');
 
 //services
+Route::get('/portfolio',[HomeController::class,'portfolio'])->name('portfolio');
 
 Route::get('/search-engine-optimization',[HomeController::class,'search_engine_optimization'])->name('search-engine-optimization');
 Route::get('/local-seo',[HomeController::class,'local_seo'])->name('local-seo');

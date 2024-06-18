@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/responsive.scss')}}">
     <link rel="icon" type="image/png" href="{{asset('asset/img/viral-fav.png')}}">
+    <link rel="stylesheet" href="{{asset('asset/main.css')}}">
 {{--    <style>--}}
 {{--        .nav-link:hover, .dropdown-item:hover {--}}
 {{--            background-color: red !important;--}}
@@ -195,15 +196,18 @@
 <!-- ===============schema============= -->
 <script defer type="application/ld+json">
     {
-    "context" : "http://schema.org",
-    "type" : "Organization",
-    "name" : "Viral Business",
-    "url" : "https://viralbusinessgroup.com/",
-    "logo" : "https://viralbusinessgroup.com/assets/img/logo.png",
-    "sameAs" : [ "http://www.fb.com/viralbusinessin",
-    "https://www.linkedin.com/company/viralbusiness",
-    "http://www.instagram.com/viralbusinessin",
-    "https://www.youtube.com/channel/UCGfbBnL-SE_otozycjMUv4Q"]
+       "schema_js": {!! json_encode($seos->first()->schema_js ?? 'schema') !!}
+{{--    "context" : "http://schema.org",--}}
+{{--    "type" : "Organization",--}}
+{{--    "name" : "Viral Business",--}}
+{{--    "url" : "https://viralbusinessgroup.com/",--}}
+{{--    "logo" : "https://viralbusinessgroup.com/assets/img/logo.png",--}}
+{{--    "sameAs" : [ "http://www.fb.com/viralbusinessin",--}}
+{{--    "https://www.linkedin.com/company/viralbusiness",--}}
+{{--    "http://www.instagram.com/viralbusinessin",--}}
+{{--    "https://www.youtube.com/channel/UCGfbBnL-SE_otozycjMUv4Q"]--}}
+
+
     }
 </script>
 <!-- ===============schema============= -->

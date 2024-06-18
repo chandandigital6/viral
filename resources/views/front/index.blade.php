@@ -129,6 +129,10 @@
                         </div>
                     </div>
                 @endforeach
+
+            </div>
+            <div class="text-center">
+                <a href="{{route('services')}}" class="btn btn-primary">Show All Services</a>
             </div>
         </div>
     </section>

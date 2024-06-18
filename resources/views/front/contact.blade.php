@@ -172,10 +172,10 @@
                 </form>
             </div>
         </div>
-        <div class="shape9"><img src="assets/img/shape/shape9.png" alt="shape9"></div>
-        <div class="shape10"><img src="assets/img/shape/shape10.png" alt="shape10"></div>
-        <div class="shape11"><img src="assets/img/shape/shape11.png" alt="shape11"></div>
-        <div class="shape12"><img src="assets/img/shape/shape12.png" alt="shape12"></div>
+        <div class="shape9"><img src="{{asset('asset/img/shape/shape9.png')}}" alt="shape9"></div>
+        <div class="shape10"><img src="{{asset('asset/img/shape/shape10.png')}}" alt="shape10"></div>
+        <div class="shape11"><img src="{{asset('asset/img/shape/shape11.png')}}" alt="shape11"></div>
+        <div class="shape12"><img src="{{asset('asset/img/shape/shape12.png')}}" alt="shape12"></div>
     </section>
 
 @endsection

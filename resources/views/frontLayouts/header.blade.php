@@ -43,6 +43,7 @@
                 <li><a href="{{route('blogCard')}}">Blogs</a></li>
                 <li><a href="{{route('testimonial')}}">Reviews</a></li>
                 <li><a href="{{route('contact')}}">Contact Us</a></li>
+                <li><a href="{{route('portfolio')}}">portfolio</a></li>
             </ul>
         </div>
     </section>
@@ -77,6 +78,8 @@
                                         <div class="dropdown__item"> <a class="dropdown__link" href="{{route('team')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Team</a> </div>
                                         <div class="dropdown__item"> <a class="dropdown__link" href="{{route('join-us')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Join Us</a> </div>
                                         <div class="dropdown__item"> <a class="dropdown__link" href="{{route('jobs')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Jobs</a> </div>
+                                        <div class="dropdown__item"> <a class="dropdown__link" href="{{route('portfolio')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>PortFolio</a> </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -116,6 +119,7 @@
                                         <div class="dropdown__item"> <a class="dropdown__link" href="{{route('youTube-marketing')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>YouTube Video Marketing</a> </div>
                                         <div class="dropdown__item"> <a class="dropdown__link " href="{{route('youTube-monetization')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Youtube Channel Monetization</a> </div>
                                         <div class="dropdown__item"> <a class="dropdown__link " href="{{route('video-production')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Video Production</a> </div>
+
                                     </div>
                                 </div>
                             </div>

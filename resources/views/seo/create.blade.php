@@ -117,6 +117,11 @@
                                             <option value="youtube-video-marketing">youtube-video-marketing</option>
                                         </select>
                                     </div>
+
+                    <div class="form-group">
+                        <label for="schema_js">Schema js :</label>
+                        <textarea class="form-control textarea" id="schema_js" name="schema_js" placeholder="Enter the meta schema_js"></textarea>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
